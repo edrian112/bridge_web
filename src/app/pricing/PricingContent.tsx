@@ -63,26 +63,15 @@ export default function PricingContent() {
 
   const getPlanCardClass = (plan: Plan) => {
     const isSelected = selectedPlan === plan;
-    if (plan === "standard") {
-      return `rounded-2xl p-6 border-2 relative cursor-pointer transition-all ${
-        isNotes ? "border-notes" : "border-pages"
-      } ${
-        isSelected
-          ? isNotes
-            ? "bg-notes-light ring-2 ring-notes ring-offset-2"
-            : "bg-pages-light ring-2 ring-pages ring-offset-2"
-          : isNotes
-          ? "bg-notes-light/50 hover:bg-notes-light"
-          : "bg-pages-light/50 hover:bg-pages-light"
-      }`;
+    const selectedBg = isNotes ? "bg-notes-light" : "bg-pages-light";
+    const selectedBorder = isNotes ? "border-notes" : "border-pages";
+    const selectedRing = isNotes ? "ring-notes" : "ring-pages";
+
+    if (isSelected) {
+      return `rounded-2xl p-6 border-2 cursor-pointer transition-all ${selectedBg} ${selectedBorder} ring-2 ${selectedRing} ring-offset-2 ${plan === "standard" ? "relative" : ""}`;
     }
-    return `bg-background rounded-2xl p-6 border cursor-pointer transition-all ${
-      isSelected
-        ? isNotes
-          ? "border-notes ring-2 ring-notes ring-offset-2"
-          : "border-pages ring-2 ring-pages ring-offset-2"
-        : "border-border hover:border-foreground/30"
-    }`;
+
+    return `bg-background rounded-2xl p-6 border cursor-pointer transition-all border-border hover:border-foreground/30 ${plan === "standard" ? "relative" : ""}`;
   };
 
   const getColumnHighlightClass = (plan: Plan) => {
@@ -217,14 +206,13 @@ export default function PricingContent() {
           <h3 className="font-semibold text-foreground mb-2">MAX</h3>
           <div className="text-3xl font-bold text-foreground mb-1">₩29,000</div>
           <p className="text-sm text-foreground-light mb-4">월 구독</p>
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <span className={`text-2xl font-bold ${isNotes ? "text-notes" : "text-pages"}`}>
-              {plans.max.count}
-            </span>
-            <span className="text-xs text-bridge bg-bridge/10 px-2 py-0.5 rounded-full font-medium">
-              Notes + Pages
+          <div className={`text-2xl font-bold ${isNotes ? "text-notes" : "text-pages"}`}>
+            {plans.max.count}
+            <span className={`text-sm font-medium ${isNotes ? "text-notes" : "text-pages"} ml-1`}>
+              · Notes + Pages
             </span>
           </div>
+          <div className="mb-4" />
           {isNotes ? (
             <Link
               href="/checkout?plan=max&product=notes"
@@ -330,9 +318,7 @@ export default function PricingContent() {
                   {renderFeatureValue(false, isNotes, selectedPlan === "standard")}
                 </td>
                 <td className={`p-4 text-center transition-all ${getColumnHighlightClass("max")}`}>
-                  <span className={`${selectedPlan === "max" ? "text-bridge font-semibold scale-110 inline-block" : "text-bridge"}`}>
-                    ✓
-                  </span>
+                  {renderFeatureValue(true, isNotes, selectedPlan === "max")}
                 </td>
               </tr>
             </tbody>
