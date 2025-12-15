@@ -158,22 +158,34 @@ export default function AboutPage() {
               BRIDGE의 의미
             </h2>
             <p className="text-foreground-light">
-              세 개의 점이 연결되는 다리
+              큰 브릿지 로고, 그리고 세 개의 점이 연결되는 다리
             </p>
           </div>
 
-          <div className="flex justify-center items-center gap-8 mb-12">
-            <div className="text-center">
-              <div className="w-12 h-12 rounded-full bg-bridge/30 mx-auto mb-3"></div>
-              <p className="text-sm text-foreground-light">AI</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-full bg-bridge mx-auto mb-3"></div>
-              <p className="text-sm font-medium text-foreground">Human</p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 rounded-full bg-bridge/30 mx-auto mb-3"></div>
-              <p className="text-sm text-foreground-light">World</p>
+          <div className="flex flex-col items-center gap-10 mb-12">
+            <Image
+              src="/icons/bridge-icon.svg"
+              alt="BRIDGE 로고"
+              width={160}
+              height={160}
+              className="drop-shadow-sm"
+              priority
+            />
+            <div className="flex items-center gap-4 md:gap-6">
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full bg-bridge/30 mx-auto mb-3"></div>
+                <p className="text-sm text-foreground-light">AI</p>
+              </div>
+              <div className="h-0.5 w-10 md:w-16 bg-bridge/30 rounded-full" />
+              <div className="text-center">
+                <div className="w-16 h-16 rounded-full bg-bridge mx-auto mb-3"></div>
+                <p className="text-sm font-medium text-foreground">Human</p>
+              </div>
+              <div className="h-0.5 w-10 md:w-16 bg-bridge/30 rounded-full" />
+              <div className="text-center">
+                <div className="w-12 h-12 rounded-full bg-bridge/30 mx-auto mb-3"></div>
+                <p className="text-sm text-foreground-light">World</p>
+              </div>
             </div>
           </div>
 
