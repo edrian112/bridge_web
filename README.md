@@ -118,7 +118,7 @@ RESEND_API_KEY=re_xxxxxxxxxx
 
 ```bash
 # Clone the repository
-git clone https://github.com/jung-geun/bridge_web.git
+git clone https://github.com/edrian112/bridge.git
 
 # Install dependencies
 npm install
@@ -146,7 +146,7 @@ npm start
 ## Contact
 
 - **Email**: edari.bridge@gmail.com
-- **GitHub**: [jung-geun/bridge_web](https://github.com/jung-geun/bridge_web)
+- **GitHub**: [edrian112/bridge](https://github.com/edrian112/bridge)
 - **Threads (BRIDGE)**: [@bridge.project.ai](https://www.threads.com/@bridge.project.ai)
 - **Threads (Developer)**: [@edari_bridge](https://www.threads.com/@edari_bridge)
 
