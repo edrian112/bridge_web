@@ -165,9 +165,13 @@ export default function PricingContent() {
               ₩4,900 구매
             </Link>
           ) : (
-            <span className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium">
+            <Link
+              href="/checkout?plan=basic10&product=pages"
+              className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+              onClick={(e) => e.stopPropagation()}
+            >
               출시 후 구매
-            </span>
+            </Link>
           )}
         </div>
 
@@ -195,9 +199,13 @@ export default function PricingContent() {
               ₩9,900 구매
             </Link>
           ) : (
-            <span className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium">
+            <Link
+              href="/checkout?plan=standard30&product=pages"
+              className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+              onClick={(e) => e.stopPropagation()}
+            >
               출시 후 구매
-            </span>
+            </Link>
           )}
         </div>
 
@@ -222,9 +230,13 @@ export default function PricingContent() {
               ₩29,000/월 구독
             </Link>
           ) : (
-            <span className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium">
+            <Link
+              href="/checkout?plan=max&product=pages"
+              className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+              onClick={(e) => e.stopPropagation()}
+            >
               출시 후 구독
-            </span>
+            </Link>
           )}
         </div>
       </div>
