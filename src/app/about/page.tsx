@@ -18,11 +18,8 @@ export default function AboutPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-            우리의 철학
-          </h1>
-          <p className="text-xl text-foreground-light mb-4">
             도구는 사람을 위해 존재합니다
-          </p>
+          </h1>
           <p className="text-2xl font-medium text-bridge">
             "From Chat to Impact"
           </p>
