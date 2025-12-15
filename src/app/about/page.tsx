@@ -201,9 +201,7 @@ export default function AboutPage() {
           <div className="space-y-6">
             {/* Notes */}
             <div className="flex items-center gap-6 p-6 bg-notes-light rounded-2xl">
-              <div className="w-16 h-16 bg-notes rounded-xl flex items-center justify-center flex-shrink-0">
-                <Image src="/icons/Notes_icon48.png" alt="Notes" width={40} height={40} className="rounded" />
-              </div>
+              <Image src="/icons/Notes_icon64.png" alt="Notes" width={48} height={48} className="flex-shrink-0" />
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-foreground mb-1">BRIDGE Notes</h3>
                 <p className="text-foreground-light text-sm">
@@ -217,9 +215,7 @@ export default function AboutPage() {
 
             {/* Pages */}
             <div className="flex items-center gap-6 p-6 bg-pages-light rounded-2xl">
-              <div className="w-16 h-16 bg-pages rounded-xl flex items-center justify-center flex-shrink-0">
-                <Image src="/icons/Pages_icon48.png" alt="Pages" width={40} height={40} className="rounded" />
-              </div>
+              <Image src="/icons/Pages_icon64.png" alt="Pages" width={48} height={48} className="flex-shrink-0" />
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-foreground mb-1">BRIDGE Pages</h3>
                 <p className="text-foreground-light text-sm">
