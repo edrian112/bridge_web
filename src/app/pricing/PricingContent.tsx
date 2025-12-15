@@ -217,10 +217,14 @@ export default function PricingContent() {
           <h3 className="font-semibold text-foreground mb-2">MAX</h3>
           <div className="text-3xl font-bold text-foreground mb-1">₩29,000</div>
           <p className="text-sm text-foreground-light mb-4">월 구독</p>
-          <div className={`text-2xl font-bold mb-2 ${isNotes ? "text-notes" : "text-pages"}`}>
-            {plans.max.count}
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <span className={`text-2xl font-bold ${isNotes ? "text-notes" : "text-pages"}`}>
+              {plans.max.count}
+            </span>
+            <span className="text-xs text-bridge bg-bridge/10 px-2 py-0.5 rounded-full font-medium">
+              Notes + Pages
+            </span>
           </div>
-          <p className="text-xs text-bridge mb-4">Notes + Pages 통합</p>
           {isNotes ? (
             <Link
               href="/checkout?plan=max&product=notes"
@@ -313,29 +317,22 @@ export default function PricingContent() {
                   </td>
                 </tr>
               ))}
-              {/* MAX 플랜 통합 혜택 강조 행 */}
-              <tr className="bg-gradient-to-r from-notes/5 via-bridge/10 to-pages/5">
-                <td className="p-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg">🎁</span>
-                    <span className="font-semibold text-foreground">Notes + Pages 통합</span>
-                  </div>
-                </td>
+              {/* MAX 플랜 통합 혜택 행 */}
+              <tr>
+                <td className="p-4 text-foreground">Notes + Pages 통합</td>
                 <td className={`p-4 text-center transition-all ${getColumnHighlightClass("free")}`}>
-                  <span className="text-foreground-light">-</span>
+                  {renderFeatureValue(false, isNotes, selectedPlan === "free")}
                 </td>
                 <td className={`p-4 text-center transition-all ${getColumnHighlightClass("basic")}`}>
-                  <span className="text-foreground-light">-</span>
+                  {renderFeatureValue(false, isNotes, selectedPlan === "basic")}
                 </td>
                 <td className={`p-4 text-center transition-all ${getColumnHighlightClass("standard")}`}>
-                  <span className="text-foreground-light">-</span>
+                  {renderFeatureValue(false, isNotes, selectedPlan === "standard")}
                 </td>
                 <td className={`p-4 text-center transition-all ${getColumnHighlightClass("max")}`}>
-                  <div className="flex flex-col items-center gap-1">
-                    <span className={`font-bold ${selectedPlan === "max" ? "text-bridge scale-110" : "text-bridge"}`}>
-                      ✓ 통합
-                    </span>
-                  </div>
+                  <span className={`${selectedPlan === "max" ? "text-bridge font-semibold scale-110 inline-block" : "text-bridge"}`}>
+                    ✓
+                  </span>
                 </td>
               </tr>
             </tbody>
