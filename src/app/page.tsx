@@ -1,46 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Header, Footer, SectionHeader, ValueCard, Badge } from "@/components";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/notes" className="text-foreground-light hover:text-notes transition-colors">
-                BRIDGE Notes
-              </Link>
-              <Link href="/pages" className="text-foreground-light hover:text-pages transition-colors">
-                BRIDGE Pages
-              </Link>
-              <Link href="/pricing" className="text-foreground-light hover:text-foreground transition-colors">
-                가격
-              </Link>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/download"
-                className="hidden sm:inline-flex px-4 py-2 bg-bridge text-white rounded-lg font-medium hover:bg-bridge-secondary transition-colors"
-              >
-                시작하기
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section - Brand Focus */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-bridge-light rounded-full text-bridge-secondary text-sm font-medium mb-6">
-            <Image src="/icons/BRIDGE-icon48.png" alt="BRIDGE" width={24} height={24} className="rounded" />
-            <span>From Chat to Brand</span>
+          <div className="mb-6">
+            <Badge text="From Chat to Brand" iconSrc="/icons/BRIDGE-icon48.png" color="bridge" />
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
             당신과 AI의 대화가<br />
@@ -72,14 +43,10 @@ export default function Home() {
       {/* Problem Section - Personal Branding Pain */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              AI와 좋은 대화를 나눴는데, <span className="text-red-500">그냥 닫아버리시나요?</span>
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              그 대화 속에 당신의 브랜드가 될 인사이트가 있습니다
-            </p>
-          </div>
+          <SectionHeader
+            title={<>AI와 좋은 대화를 나눴는데, <span className="text-red-500">그냥 닫아버리시나요?</span></>}
+            subtitle="그 대화 속에 당신의 브랜드가 될 인사이트가 있습니다"
+          />
           <div className="grid md:grid-cols-2 gap-8">
             {/* Before */}
             <div className="bg-background rounded-2xl p-8 border border-border">
@@ -146,48 +113,29 @@ export default function Home() {
       {/* Personal Branding Value Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              왜 <span className="text-bridge">AI 대화 공유</span>가 중요한가요?
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              AI와의 대화는 당신만의 시각을 보여주는 가장 진정성 있는 콘텐츠입니다
-            </p>
-          </div>
+          <SectionHeader
+            title={<>왜 <span className="text-bridge">AI 대화 공유</span>가 중요한가요?</>}
+            subtitle="AI와의 대화는 당신만의 시각을 보여주는 가장 진정성 있는 콘텐츠입니다"
+          />
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Value 1 */}
-            <div className="text-center p-8 bg-background-alt rounded-2xl">
-              <div className="w-16 h-16 bg-bridge rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">📈</span>
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">팔로워 증가</h3>
-              <p className="text-foreground-light">
-                유용한 AI 인사이트를 공유하면 자연스럽게 팔로워가 늘어납니다.
-                <strong className="text-foreground block mt-2">"이 사람 팔로우하면 배울 게 있구나"</strong>
-              </p>
-            </div>
-            {/* Value 2 */}
-            <div className="text-center p-8 bg-background-alt rounded-2xl">
-              <div className="w-16 h-16 bg-bridge rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🏆</span>
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">전문가 포지셔닝</h3>
-              <p className="text-foreground-light">
-                꾸준한 지식 공유는 당신을 분야의 전문가로 만듭니다.
-                <strong className="text-foreground block mt-2">"이 분야는 이 사람한테 물어봐야지"</strong>
-              </p>
-            </div>
-            {/* Value 3 */}
-            <div className="text-center p-8 bg-background-alt rounded-2xl">
-              <div className="w-16 h-16 bg-bridge rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">💼</span>
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">기회의 문</h3>
-              <p className="text-foreground-light">
-                개인 브랜드는 이직, 사업, 협업 기회로 이어집니다.
-                <strong className="text-foreground block mt-2">"같이 일해볼까요?"</strong>
-              </p>
-            </div>
+            <ValueCard
+              icon="📈"
+              title="팔로워 증가"
+              description={<>유용한 AI 인사이트를 공유하면 자연스럽게 팔로워가 늘어납니다.<strong className="text-foreground block mt-2">"이 사람 팔로우하면 배울 게 있구나"</strong></>}
+              variant="neutral"
+            />
+            <ValueCard
+              icon="🏆"
+              title="전문가 포지셔닝"
+              description={<>꾸준한 지식 공유는 당신을 분야의 전문가로 만듭니다.<strong className="text-foreground block mt-2">"이 분야는 이 사람한테 물어봐야지"</strong></>}
+              variant="neutral"
+            />
+            <ValueCard
+              icon="💼"
+              title="기회의 문"
+              description={<>개인 브랜드는 이직, 사업, 협업 기회로 이어집니다.<strong className="text-foreground block mt-2">"같이 일해볼까요?"</strong></>}
+              variant="neutral"
+            />
           </div>
         </div>
       </section>
@@ -195,14 +143,7 @@ export default function Home() {
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              AI 대화 → 콘텐츠 → 브랜드
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              BRIDGE가 그 여정을 연결합니다
-            </p>
-          </div>
+          <SectionHeader title="AI 대화 → 콘텐츠 → 브랜드" subtitle="BRIDGE가 그 여정을 연결합니다" />
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
             {/* Step 1 */}
             <div className="flex flex-col items-center text-center p-6 max-w-[200px]">
@@ -246,14 +187,7 @@ export default function Home() {
       {/* Product Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              두 가지 도구로 완벽한 콘텐츠 파이프라인
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              짧은 글부터 긴 글까지, AI 학습의 모든 것을 콘텐츠로
-            </p>
-          </div>
+          <SectionHeader title="두 가지 도구로 완벽한 콘텐츠 파이프라인" subtitle="짧은 글부터 긴 글까지, AI 학습의 모든 것을 콘텐츠로" />
           <div className="grid md:grid-cols-2 gap-8">
             {/* BRIDGE Notes */}
             <div className="bg-notes-light rounded-2xl p-8 border border-notes/20 hover:shadow-xl hover:shadow-notes/10 transition-all">
@@ -346,11 +280,7 @@ export default function Home() {
       {/* Success Story Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              이런 변화가 일어납니다
-            </h2>
-          </div>
+          <SectionHeader title="이런 변화가 일어납니다" />
           <div className="grid md:grid-cols-3 gap-8">
             {/* Story 1 */}
             <div className="bg-background rounded-2xl p-6 border border-border">
@@ -363,14 +293,10 @@ export default function Home() {
                   <p className="text-sm text-foreground-light">트위터 활동</p>
                 </div>
               </div>
-              <p className="text-foreground-light mb-4">
+              <p className="text-foreground-light">
                 "매일 AI로 공부한 걸 트윗하기 시작했더니 3개월 만에 팔로워가 500명에서 3,000명으로 늘었어요.
                 이직 제안도 3건이나 받았습니다."
               </p>
-              <div className="flex items-center gap-4 text-sm">
-                <span className="text-notes font-medium">팔로워 6배 ↑</span>
-                <span className="text-bridge font-medium">이직 제안 3건</span>
-              </div>
             </div>
             {/* Story 2 */}
             <div className="bg-background rounded-2xl p-6 border border-border">
@@ -383,14 +309,10 @@ export default function Home() {
                   <p className="text-sm text-foreground-light">블로그 운영</p>
                 </div>
               </div>
-              <p className="text-foreground-light mb-4">
+              <p className="text-foreground-light">
                 "블로그 포스트 작성 시간이 3시간에서 1시간으로 줄었어요.
                 주 1회에서 주 3회 발행으로 늘리니 검색 유입이 3배 증가했습니다."
               </p>
-              <div className="flex items-center gap-4 text-sm">
-                <span className="text-pages font-medium">작성 시간 1/3</span>
-                <span className="text-bridge font-medium">트래픽 3배 ↑</span>
-              </div>
             </div>
             {/* Story 3 */}
             <div className="bg-background rounded-2xl p-6 border border-border">
@@ -403,14 +325,10 @@ export default function Home() {
                   <p className="text-sm text-foreground-light">팀 지식 공유</p>
                 </div>
               </div>
-              <p className="text-foreground-light mb-4">
+              <p className="text-foreground-light">
                 "AI로 조사한 내용을 팀에 공유하는 빈도가 10배 늘었어요.
                 '항상 유용한 정보 주는 사람'이 되니 팀 내 영향력이 확 올랐습니다."
               </p>
-              <div className="flex items-center gap-4 text-sm">
-                <span className="text-bridge font-medium">공유 10배 ↑</span>
-                <span className="text-notes font-medium">팀 내 영향력 ↑</span>
-              </div>
             </div>
           </div>
         </div>
@@ -419,10 +337,6 @@ export default function Home() {
       {/* Philosophy Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-bridge-light rounded-full text-bridge-secondary text-sm font-medium mb-6">
-            <span>💡</span>
-            <span>BRIDGE의 철학</span>
-          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             "오늘의 대화가 <span className="text-bridge">내일의 브랜드</span>가 됩니다"
           </h2>
@@ -478,26 +392,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-foreground text-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl">BRIDGE</span>
-            </div>
-            <div className="flex gap-8 text-sm">
-              <Link href="/notes" className="hover:text-bridge transition-colors">BRIDGE Notes</Link>
-              <Link href="/pages" className="hover:text-bridge transition-colors">BRIDGE Pages</Link>
-              <Link href="/pricing" className="hover:text-bridge transition-colors">가격</Link>
-              <Link href="/docs" className="hover:text-bridge transition-colors">문서</Link>
-            </div>
-            <p className="text-sm opacity-70">
-              © 2025 BRIDGE. From Chat to Brand.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

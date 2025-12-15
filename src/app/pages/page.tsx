@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { Header, Footer, SectionHeader, FeatureCard, ValueCard, Badge } from "@/components";
 
 export const metadata: Metadata = {
   title: "BRIDGE Pages - AI 대화를 블로그 콘텐츠로",
@@ -11,45 +12,15 @@ export const metadata: Metadata = {
 export default function PagesPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/notes" className="text-foreground-light hover:text-notes transition-colors">
-                BRIDGE Notes
-              </Link>
-              <Link href="/pages" className="text-pages font-medium">
-                BRIDGE Pages
-              </Link>
-              <Link href="/pricing" className="text-foreground-light hover:text-foreground transition-colors">
-                가격
-              </Link>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link
-                href="#waitlist"
-                className="hidden sm:inline-flex px-4 py-2 bg-pages text-white rounded-lg font-medium hover:bg-pages-secondary transition-colors"
-              >
-                출시 알림
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header ctaText="출시 알림" ctaHref="#waitlist" ctaColor="pages" />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-pages-light">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-pages/10 rounded-full text-pages text-sm font-medium mb-6">
-                <Image src="/icons/Pages_icon48.png" alt="Pages" width={24} height={24} className="rounded" />
-                <span>블로그 콘텐츠 생산기 · Coming Soon</span>
+              <div className="mb-6">
+                <Badge text="블로그 콘텐츠 생산기 · Coming Soon" iconSrc="/icons/Pages_icon48.png" color="pages" />
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
                 AI 대화를<br />
@@ -90,48 +61,11 @@ export default function PagesPage() {
       {/* Value Proposition Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              BRIDGE Pages의 가치
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              AI 대화에서 시작해 영구적인 콘텐츠 자산으로
-            </p>
-          </div>
+          <SectionHeader title="BRIDGE Pages의 가치" subtitle="AI 대화에서 시작해 영구적인 콘텐츠 자산으로" />
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Depth */}
-            <div className="text-center p-8 bg-pages-light rounded-2xl">
-              <div className="w-16 h-16 bg-pages rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🌊</span>
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">깊이 (Depth)</h3>
-              <p className="text-foreground-light">
-                AI 대화를 심도 있는 블로그 콘텐츠로 확장합니다.
-                단순 복사가 아닌, 논리적 흐름을 갖춘 긴 글로 변환됩니다.
-              </p>
-            </div>
-            {/* Asset */}
-            <div className="text-center p-8 bg-pages-light rounded-2xl">
-              <div className="w-16 h-16 bg-pages rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">💎</span>
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">자산화 (Asset)</h3>
-              <p className="text-foreground-light">
-                휘발성 SNS 포스트를 넘어, 검색 트래픽을 유입시키는
-                영구적인 콘텐츠 자산을 구축하세요.
-              </p>
-            </div>
-            {/* Flexibility */}
-            <div className="text-center p-8 bg-pages-light rounded-2xl">
-              <div className="w-16 h-16 bg-pages rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">🎯</span>
-              </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">유연성 (Flexibility)</h3>
-              <p className="text-foreground-light">
-                직접 AI 대화를 캡처하거나, BRIDGE Notes에서 만든 글을
-                불러와 확장할 수 있습니다.
-              </p>
-            </div>
+            <ValueCard icon="🌊" title="깊이 (Depth)" description="AI 대화를 심도 있는 블로그 콘텐츠로 확장합니다. 단순 복사가 아닌, 논리적 흐름을 갖춘 긴 글로 변환됩니다." color="pages" />
+            <ValueCard icon="💎" title="자산화 (Asset)" description="휘발성 SNS 포스트를 넘어, 검색 트래픽을 유입시키는 영구적인 콘텐츠 자산을 구축하세요." color="pages" />
+            <ValueCard icon="🎯" title="유연성 (Flexibility)" description="직접 AI 대화를 캡처하거나, BRIDGE Notes에서 만든 글을 불러와 확장할 수 있습니다." color="pages" />
           </div>
         </div>
       </section>
@@ -139,14 +73,7 @@ export default function PagesPage() {
       {/* Input Methods Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              두 가지 입력 방식
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              상황에 맞게 선택하세요
-            </p>
-          </div>
+          <SectionHeader title="두 가지 입력 방식" subtitle="상황에 맞게 선택하세요" />
           <div className="grid md:grid-cols-2 gap-8">
             {/* Direct Capture */}
             <div className="bg-background rounded-2xl p-8 border-2 border-pages">
@@ -205,54 +132,101 @@ export default function PagesPage() {
       {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              핵심 기능
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              콘텐츠 제작의 모든 단계를 지원합니다
-            </p>
-          </div>
+          <SectionHeader title="핵심 기능" subtitle="콘텐츠 제작의 모든 단계를 지원합니다" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Feature 1 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-pages/30 transition-colors">
-              <div className="w-12 h-12 bg-pages-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">👆</span>
+            <FeatureCard icon="👆" title="두 클릭 캡처" description="Same intuitive capture as BRIDGE Notes" color="pages" />
+            <FeatureCard icon="📝" title="AI 기반 확장" description="목차 구성 및 논리적 흐름 자동 생성" color="pages" />
+            <FeatureCard icon="🔍" title="SEO 최적화" description="키워드 추출 및 메타 태그 자동 생성" color="pages" />
+            <FeatureCard icon="🚀" title="자동 발행" description="Tistory, Medium 등 자동 발행" color="pages" />
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Optimization Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-pages-light">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-pages text-white text-sm font-medium rounded-full mb-6">
+                Key Feature
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">두 클릭 캡처</h3>
-              <p className="text-sm text-foreground-light">
-                Same intuitive capture as BRIDGE Notes
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+                SEO 최적화,<br />
+                <span className="text-pages">자동으로</span>
+              </h2>
+              <p className="text-lg text-foreground-light mb-8">
+                블로그 글이 검색에서 잘 노출되려면 SEO가 필수입니다.
+                BRIDGE Pages가 AI를 활용해 자동으로 최적화해 드립니다.
               </p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 bg-pages rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-sm">✓</span>
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-foreground">스마트 키워드 추출</h4>
+                    <p className="text-sm text-foreground-light">AI가 글의 핵심 키워드를 자동 분석하고 전략적으로 배치합니다</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 bg-pages rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-sm">✓</span>
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-foreground">메타 태그 자동 생성</h4>
+                    <p className="text-sm text-foreground-light">검색 결과에 표시될 제목과 설명을 최적화된 형태로 생성합니다</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 bg-pages rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-sm">✓</span>
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-foreground">URL Slug 최적화</h4>
+                    <p className="text-sm text-foreground-light">검색엔진이 이해하기 쉬운 URL 구조를 자동으로 제안합니다</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="w-6 h-6 bg-pages rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white text-sm">✓</span>
+                  </span>
+                  <div>
+                    <h4 className="font-semibold text-foreground">구조화된 콘텐츠</h4>
+                    <p className="text-sm text-foreground-light">H1~H6 태그, 목록, 강조 등 검색엔진이 선호하는 구조로 정리합니다</p>
+                  </div>
+                </li>
+              </ul>
             </div>
-            {/* Feature 2 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-pages/30 transition-colors">
-              <div className="w-12 h-12 bg-pages-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">📝</span>
+            <div className="bg-background rounded-2xl p-8 border border-border shadow-lg">
+              <div className="space-y-6">
+                <div>
+                  <span className="text-xs text-foreground-light uppercase tracking-wider">Preview</span>
+                  <div className="mt-3 p-4 bg-background-alt rounded-lg">
+                    <p className="text-sm text-pages font-medium mb-1">example.com/ai-productivity-tips</p>
+                    <h4 className="text-lg font-semibold text-foreground mb-2">AI로 생산성 10배 높이는 5가지 방법 | BRIDGE</h4>
+                    <p className="text-sm text-foreground-light">AI 도구를 활용한 생산성 향상 팁. ChatGPT, Claude 등을 업무에 효과적으로 적용하는 방법을 알아보세요. 실제 사례와 함께...</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 bg-background-alt rounded-lg">
+                    <p className="text-xs text-foreground-light uppercase tracking-wider mb-2">Keywords</p>
+                    <div className="flex flex-wrap gap-1">
+                      <span className="px-2 py-1 bg-pages/10 text-pages text-xs rounded">AI 생산성</span>
+                      <span className="px-2 py-1 bg-pages/10 text-pages text-xs rounded">ChatGPT</span>
+                      <span className="px-2 py-1 bg-pages/10 text-pages text-xs rounded">업무 효율</span>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-background-alt rounded-lg">
+                    <p className="text-xs text-foreground-light uppercase tracking-wider mb-2">Score</p>
+                    <div className="flex items-center gap-2">
+                      <div className="flex-1 h-2 bg-border rounded-full overflow-hidden">
+                        <div className="h-full bg-pages rounded-full" style={{width: '85%'}}></div>
+                      </div>
+                      <span className="text-sm font-semibold text-pages">85</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">AI 기반 확장</h3>
-              <p className="text-sm text-foreground-light">
-                목차 구성 및 논리적 흐름 자동 생성
-              </p>
-            </div>
-            {/* Feature 3 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-pages/30 transition-colors">
-              <div className="w-12 h-12 bg-pages-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">🔍</span>
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">SEO 최적화</h3>
-              <p className="text-sm text-foreground-light">
-                키워드 추출 및 메타 태그 자동 생성
-              </p>
-            </div>
-            {/* Feature 4 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-pages/30 transition-colors">
-              <div className="w-12 h-12 bg-pages-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">🚀</span>
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">자동 발행</h3>
-              <p className="text-sm text-foreground-light">
-                Tistory, Medium 등 자동 발행
-              </p>
             </div>
           </div>
         </div>
@@ -261,14 +235,7 @@ export default function PagesPage() {
       {/* Workflow Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              워크플로우
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              AI 대화에서 블로그까지, 4단계
-            </p>
-          </div>
+          <SectionHeader title="워크플로우" subtitle="AI 대화에서 블로그까지, 4단계" />
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2">
             {/* Step 1 */}
             <div className="text-center flex-1 max-w-[140px]">
@@ -323,14 +290,7 @@ export default function PagesPage() {
       {/* Pricing Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              가격 정책
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              Same price as BRIDGE Notes, optimized for long-form content
-            </p>
-          </div>
+          <SectionHeader title="가격 정책" subtitle="Same price as BRIDGE Notes, optimized for long-form content" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Free */}
             <div className="bg-background rounded-2xl p-6 border border-border">
@@ -442,32 +402,7 @@ export default function PagesPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-foreground text-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl">BRIDGE</span>
-            </div>
-            <div className="flex gap-8 text-sm">
-              <Link href="/notes" className="hover:text-notes transition-colors">
-                BRIDGE Notes
-              </Link>
-              <Link href="/pages" className="hover:text-pages transition-colors">
-                BRIDGE Pages
-              </Link>
-              <Link href="/pricing" className="hover:text-bridge transition-colors">
-                가격
-              </Link>
-              <Link href="/docs" className="hover:text-bridge transition-colors">
-                문서
-              </Link>
-            </div>
-            <p className="text-sm opacity-70">© 2025 BRIDGE. From Chat to Brand.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

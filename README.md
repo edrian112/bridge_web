@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BRIDGE Web
+
+AI 대화를 콘텐츠로 변환하는 BRIDGE 서비스의 공식 웹사이트입니다.
+
+## Overview
+
+BRIDGE는 AI와의 대화를 캡처하고, SNS 콘텐츠나 블로그 포스트로 변환해주는 서비스입니다.
+
+- **BRIDGE Notes**: AI 대화 캡처 및 SNS 콘텐츠 변환 (Chrome Extension)
+- **BRIDGE Pages**: AI 대화 기반 블로그 콘텐츠 생성
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS v4
+- **Language**: TypeScript
+- **Font**: Geist (next/font)
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── page.tsx           # Main landing page
+│   ├── notes/page.tsx     # BRIDGE Notes product page
+│   ├── pages/page.tsx     # BRIDGE Pages product page
+│   ├── pricing/page.tsx   # Pricing page
+│   ├── about/page.tsx     # About page
+│   ├── terms/page.tsx     # Terms of Service (이용약관)
+│   ├── privacy/page.tsx   # Privacy Policy (개인정보처리방침)
+│   ├── icon.png           # Favicon
+│   ├── apple-icon.png     # Apple touch icon
+│   ├── layout.tsx         # Root layout
+│   └── globals.css        # Global styles & Tailwind config
+│
+├── components/            # Reusable UI components
+│   ├── Header.tsx         # Navigation header
+│   ├── Footer.tsx         # Site footer with social links
+│   ├── SectionHeader.tsx  # Section title component
+│   ├── FeatureCard.tsx    # Feature card with icon
+│   ├── ValueCard.tsx      # Value proposition card
+│   ├── PlatformCard.tsx   # Platform/AI service card
+│   ├── Badge.tsx          # Tag/label component
+│   ├── CTASection.tsx     # Call-to-action section
+│   └── index.ts           # Component exports
+│
+└── fonts/                 # Custom font files
+```
+
+## Components
+
+### Core Components
+| Component | Description |
+|-----------|-------------|
+| `Header` | 반응형 네비게이션 헤더 (모바일 메뉴 포함) |
+| `Footer` | 사이트 푸터 (소셜 링크, 법적 페이지 링크) |
+
+### UI Components
+| Component | Props | Description |
+|-----------|-------|-------------|
+| `SectionHeader` | `title`, `subtitle?`, `className?` | 섹션 제목 컴포넌트 |
+| `FeatureCard` | `icon`, `title`, `description`, `color?` | 기능 소개 카드 |
+| `ValueCard` | `icon`, `title`, `description`, `color?`, `variant?` | 가치 제안 카드 |
+| `PlatformCard` | `icon`, `name`, `bgColor` | 플랫폼/AI 서비스 카드 |
+| `Badge` | `text`, `icon?`, `iconSrc?`, `color?`, `variant?` | 태그/라벨 컴포넌트 |
+| `CTASection` | `title`, `subtitle?`, `buttonText`, `buttonHref`, `color?`, `secondaryContent?` | CTA 섹션 |
+
+## Brand Colors
+
+```css
+/* Primary Colors */
+--color-bridge: #10B981;    /* Emerald - Main brand */
+--color-notes: #8B5CF6;     /* Purple - BRIDGE Notes */
+--color-pages: #F59E0B;     /* Amber - BRIDGE Pages */
+
+/* Light Variants (backgrounds) */
+--color-bridge-light: #D1FAE5;
+--color-notes-light: #EDE9FE;
+--color-pages-light: #FEF3C7;
+```
+
+## Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | 메인 랜딩 페이지 |
+| `/notes` | BRIDGE Notes 제품 소개 |
+| `/pages` | BRIDGE Pages 제품 소개 |
+| `/pricing` | 요금제 안내 |
+| `/about` | 회사 소개 |
+| `/terms` | 이용약관 |
+| `/privacy` | 개인정보처리방침 |
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18.17 or later
+- npm, yarn, pnpm, or bun
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/jung-geun/bridge_web.git
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Production build
+npm run build
 
-## Learn More
+# Start production server
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+이 프로젝트는 [Vercel](https://vercel.com)에 배포됩니다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+- **Email**: edari.bridge@gmail.com
+- **GitHub**: [jung-geun/bridge_web](https://github.com/jung-geun/bridge_web)
+- **Threads (BRIDGE)**: [@bridge.project.ai](https://www.threads.com/@bridge.project.ai)
+- **Threads (Developer)**: [@edari_bridge](https://www.threads.com/@edari_bridge)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copyright 2025 BRIDGE. All rights reserved.

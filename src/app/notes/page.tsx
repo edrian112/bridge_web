@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { Header, Footer, SectionHeader, FeatureCard, PlatformCard, CTASection, Badge } from "@/components";
 
 export const metadata: Metadata = {
   title: "BRIDGE Notes - AI 대화를 SNS 콘텐츠로",
@@ -11,45 +12,15 @@ export const metadata: Metadata = {
 export default function NotesPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/notes" className="text-notes font-medium">
-                BRIDGE Notes
-              </Link>
-              <Link href="/pages" className="text-foreground-light hover:text-pages transition-colors">
-                BRIDGE Pages
-              </Link>
-              <Link href="/pricing" className="text-foreground-light hover:text-foreground transition-colors">
-                가격
-              </Link>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/download"
-                className="hidden sm:inline-flex px-4 py-2 bg-notes text-white rounded-lg font-medium hover:bg-notes-secondary transition-colors"
-              >
-                설치하기
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header ctaText="설치하기" ctaColor="notes" />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-notes-light">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-notes/10 rounded-full text-notes text-sm font-medium mb-6">
-                <Image src="/icons/Notes_icon48.png" alt="Notes" width={24} height={24} className="rounded" />
-                <span>SNS 콘텐츠 생산기</span>
+              <div className="mb-6">
+                <Badge text="SNS 콘텐츠 생산기" iconSrc="/icons/Notes_icon48.png" color="notes" />
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
                 AI 대화를<br />
@@ -90,75 +61,14 @@ export default function NotesPage() {
       {/* Features Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              핵심 기능
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              마찰 없이, 빠르게, 정확하게
-            </p>
-          </div>
+          <SectionHeader title="핵심 기능" subtitle="마찰 없이, 빠르게, 정확하게" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-notes/30 transition-colors">
-              <div className="w-12 h-12 bg-notes-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">👆</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">두 클릭 범위 선택</h3>
-              <p className="text-foreground-light">
-                시작 메시지 클릭, 끝 메시지 클릭. 그게 전부입니다.
-              </p>
-            </div>
-            {/* Feature 2 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-notes/30 transition-colors">
-              <div className="w-12 h-12 bg-notes-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">🤖</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">AI 자동 정리</h3>
-              <p className="text-foreground-light">
-                선택한 대화를 AI가 깔끔하게 정리해드립니다.
-              </p>
-            </div>
-            {/* Feature 3 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-notes/30 transition-colors">
-              <div className="w-12 h-12 bg-notes-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">🎭</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">톤 조정</h3>
-              <p className="text-foreground-light">
-                친근한 톤, 정중한 톤 등 상황에 맞게 조정하세요.
-              </p>
-            </div>
-            {/* Feature 4 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-notes/30 transition-colors">
-              <div className="w-12 h-12 bg-notes-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">🔄</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">스마트 중복 제거</h3>
-              <p className="text-foreground-light">
-                불필요한 반복과 중복을 자동으로 제거합니다.
-              </p>
-            </div>
-            {/* Feature 5 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-notes/30 transition-colors">
-              <div className="w-12 h-12 bg-notes-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">📚</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">히스토리 관리</h3>
-              <p className="text-foreground-light">
-                이전에 정리한 글들을 언제든 다시 확인할 수 있습니다.
-              </p>
-            </div>
-            {/* Feature 6 */}
-            <div className="p-6 bg-background rounded-2xl border border-border hover:border-notes/30 transition-colors">
-              <div className="w-12 h-12 bg-notes-light rounded-xl flex items-center justify-center mb-4">
-                <span className="text-2xl">🌙</span>
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">다크모드</h3>
-              <p className="text-foreground-light">
-                눈이 편한 다크모드를 지원합니다.
-              </p>
-            </div>
+            <FeatureCard icon="👆" title="두 클릭 범위 선택" description="시작 메시지 클릭, 끝 메시지 클릭. 그게 전부입니다." color="notes" />
+            <FeatureCard icon="🤖" title="AI 자동 정리" description="선택한 대화를 AI가 깔끔하게 정리해드립니다." color="notes" />
+            <FeatureCard icon="🎭" title="톤 조정" description="친근한 톤, 정중한 톤 등 상황에 맞게 조정하세요." color="notes" />
+            <FeatureCard icon="🔄" title="스마트 중복 제거" description="불필요한 반복과 중복을 자동으로 제거합니다." color="notes" />
+            <FeatureCard icon="📚" title="히스토리 관리" description="이전에 정리한 글들을 언제든 다시 확인할 수 있습니다." color="notes" />
+            <FeatureCard icon="🌙" title="다크모드" description="눈이 편한 다크모드를 지원합니다." color="notes" />
           </div>
         </div>
       </section>
@@ -166,43 +76,12 @@ export default function NotesPage() {
       {/* Supported Sites Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              지원 플랫폼
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              주요 AI 서비스를 모두 지원합니다
-            </p>
-          </div>
+          <SectionHeader title="지원 플랫폼" subtitle="주요 AI 서비스를 모두 지원합니다" />
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {/* Claude */}
-            <div className="bg-background rounded-2xl p-8 text-center border border-border hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🟠</span>
-              </div>
-              <h4 className="font-semibold text-foreground">Claude.ai</h4>
-            </div>
-            {/* ChatGPT */}
-            <div className="bg-background rounded-2xl p-8 text-center border border-border hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🟢</span>
-              </div>
-              <h4 className="font-semibold text-foreground">ChatGPT</h4>
-            </div>
-            {/* Perplexity */}
-            <div className="bg-background rounded-2xl p-8 text-center border border-border hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🔵</span>
-              </div>
-              <h4 className="font-semibold text-foreground">Perplexity</h4>
-            </div>
-            {/* Gemini */}
-            <div className="bg-background rounded-2xl p-8 text-center border border-border hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🟣</span>
-              </div>
-              <h4 className="font-semibold text-foreground">Gemini</h4>
-            </div>
+            <PlatformCard icon="🟠" name="Claude.ai" bgColor="bg-orange-100" />
+            <PlatformCard icon="🟢" name="ChatGPT" bgColor="bg-green-100" />
+            <PlatformCard icon="🔵" name="Perplexity" bgColor="bg-blue-100" />
+            <PlatformCard icon="🟣" name="Gemini" bgColor="bg-purple-100" />
           </div>
         </div>
       </section>
@@ -210,14 +89,7 @@ export default function NotesPage() {
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              사용 방법
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              3단계만 따라하세요
-            </p>
-          </div>
+          <SectionHeader title="사용 방법" subtitle="3단계만 따라하세요" />
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="text-center">
@@ -265,14 +137,7 @@ export default function NotesPage() {
       {/* Pricing Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              가격 정책
-            </h2>
-            <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              필요한 만큼만 사용하세요
-            </p>
-          </div>
+          <SectionHeader title="가격 정책" subtitle="필요한 만큼만 사용하세요" />
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Free */}
             <div className="bg-background rounded-2xl p-6 border border-border">
@@ -350,49 +215,15 @@ export default function NotesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-notes">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            AI 대화를 브랜드로 만들 준비가 되셨나요?
-          </h2>
-          <p className="text-xl text-white/80 mb-10">
-            매월 5회 무료. 오늘의 대화가 내일의 브랜드가 됩니다.
-          </p>
-          <Link
-            href="/download"
-            className="inline-flex px-8 py-4 bg-white text-notes rounded-xl font-semibold text-lg hover:bg-notes-light transition-colors shadow-lg"
-          >
-            지금 다운로드하고 브랜딩 시작하기
-          </Link>
-        </div>
-      </section>
+      <CTASection
+        title="AI 대화를 브랜드로 만들 준비가 되셨나요?"
+        subtitle="매월 5회 무료. 오늘의 대화가 내일의 브랜드가 됩니다."
+        buttonText="지금 다운로드하고 브랜딩 시작하기"
+        buttonHref="/download"
+        color="notes"
+      />
 
-      {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-foreground text-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl">BRIDGE</span>
-            </div>
-            <div className="flex gap-8 text-sm">
-              <Link href="/notes" className="hover:text-notes transition-colors">
-                BRIDGE Notes
-              </Link>
-              <Link href="/pages" className="hover:text-pages transition-colors">
-                BRIDGE Pages
-              </Link>
-              <Link href="/pricing" className="hover:text-bridge transition-colors">
-                가격
-              </Link>
-              <Link href="/docs" className="hover:text-bridge transition-colors">
-                문서
-              </Link>
-            </div>
-            <p className="text-sm opacity-70">© 2025 BRIDGE. From Chat to Brand.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

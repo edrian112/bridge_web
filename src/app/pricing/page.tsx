@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { Header, Footer } from "@/components";
 
 export const metadata: Metadata = {
-  title: "가격 정책 - BRIDGE | From Chat to Brand",
+  title: "Pricing - BRIDGE | From Chat to Brand",
   description:
     "AI 대화를 브랜드로 만드는 BRIDGE의 심플한 가격 정책. 동일한 가격, 제품별 최적화된 사용 횟수.",
 };
@@ -11,36 +12,7 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
-            </Link>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="/notes" className="text-foreground-light hover:text-notes transition-colors">
-                BRIDGE Notes
-              </Link>
-              <Link href="/pages" className="text-foreground-light hover:text-pages transition-colors">
-                BRIDGE Pages
-              </Link>
-              <Link href="/pricing" className="text-bridge font-medium">
-                가격
-              </Link>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link
-                href="/download"
-                className="hidden sm:inline-flex px-4 py-2 bg-bridge text-white rounded-lg font-medium hover:bg-bridge-secondary transition-colors"
-              >
-                시작하기
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
@@ -205,10 +177,10 @@ export default function PricingPage() {
                   {/* 템플릿 */}
                   <tr>
                     <td className="p-4 text-foreground">템플릿</td>
-                    <td className="p-4 text-center text-foreground-light">기본</td>
-                    <td className="p-4 text-center text-bridge">모든 템플릿</td>
-                    <td className="p-4 text-center text-bridge bg-bridge-light/50">모든 템플릿</td>
-                    <td className="p-4 text-center text-bridge">모든 템플릿</td>
+                    <td className="p-4 text-center text-bridge">✓</td>
+                    <td className="p-4 text-center text-bridge">✓</td>
+                    <td className="p-4 text-center text-bridge bg-bridge-light/50">✓</td>
+                    <td className="p-4 text-center text-bridge">✓</td>
                   </tr>
                   {/* AI 모델 선택 */}
                   <tr>
@@ -224,8 +196,8 @@ export default function PricingPage() {
                       SEO 최적화
                       <span className="ml-2 text-xs text-pages bg-pages-light px-2 py-0.5 rounded">Pages</span>
                     </td>
-                    <td className="p-4 text-center text-foreground-light">-</td>
-                    <td className="p-4 text-center text-foreground-light">-</td>
+                    <td className="p-4 text-center text-bridge">✓</td>
+                    <td className="p-4 text-center text-bridge">✓</td>
                     <td className="p-4 text-center text-bridge bg-bridge-light/50">✓</td>
                     <td className="p-4 text-center text-bridge">✓</td>
                   </tr>
@@ -235,17 +207,9 @@ export default function PricingPage() {
                       블로그 자동 발행
                       <span className="ml-2 text-xs text-pages bg-pages-light px-2 py-0.5 rounded">Pages</span>
                     </td>
-                    <td className="p-4 text-center text-foreground-light">Tistory</td>
-                    <td className="p-4 text-center text-foreground-light">Tistory</td>
-                    <td className="p-4 text-center text-bridge bg-bridge-light/50">+ Medium</td>
-                    <td className="p-4 text-center text-bridge">모든 플랫폼</td>
-                  </tr>
-                  {/* 우선 지원 */}
-                  <tr>
-                    <td className="p-4 text-foreground">우선 지원</td>
                     <td className="p-4 text-center text-foreground-light">-</td>
                     <td className="p-4 text-center text-foreground-light">-</td>
-                    <td className="p-4 text-center text-foreground-light bg-bridge-light/50">-</td>
+                    <td className="p-4 text-center text-bridge bg-bridge-light/50">✓</td>
                     <td className="p-4 text-center text-bridge">✓</td>
                   </tr>
                   {/* 베타 기능 조기 접근 */}
@@ -396,32 +360,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 bg-foreground text-background">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex items-center gap-2">
-              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
-              <span className="font-semibold text-xl">BRIDGE</span>
-            </div>
-            <div className="flex gap-8 text-sm">
-              <Link href="/notes" className="hover:text-notes transition-colors">
-                Notes
-              </Link>
-              <Link href="/pages" className="hover:text-pages transition-colors">
-                Pages
-              </Link>
-              <Link href="/pricing" className="hover:text-bridge transition-colors">
-                가격
-              </Link>
-              <Link href="/docs" className="hover:text-bridge transition-colors">
-                문서
-              </Link>
-            </div>
-            <p className="text-sm opacity-70">© 2025 BRIDGE. From Chat to Brand.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
