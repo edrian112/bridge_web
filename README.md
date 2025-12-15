@@ -28,6 +28,9 @@ src/
 │   ├── about/page.tsx     # About page
 │   ├── terms/page.tsx     # Terms of Service (이용약관)
 │   ├── privacy/page.tsx   # Privacy Policy (개인정보처리방침)
+│   ├── contact/page.tsx   # Contact form page
+│   ├── actions/           # Server actions
+│   │   └── contact.ts     # Email sending action
 │   ├── icon.png           # Favicon
 │   ├── apple-icon.png     # Apple touch icon
 │   ├── layout.tsx         # Root layout
@@ -88,8 +91,22 @@ src/
 | `/pages` | BRIDGE Pages 제품 소개 |
 | `/pricing` | 요금제 안내 |
 | `/about` | 회사 소개 |
+| `/contact` | 문의하기 (이메일 전송 폼) |
 | `/terms` | 이용약관 |
 | `/privacy` | 개인정보처리방침 |
+
+## Environment Variables
+
+문의 폼 이메일 발송을 위해 [Resend](https://resend.com) API 키가 필요합니다.
+
+```bash
+# .env.local
+RESEND_API_KEY=re_xxxxxxxxxx
+```
+
+1. [Resend](https://resend.com)에서 계정 생성
+2. API Key 발급
+3. `.env.local` 파일에 추가
 
 ## Getting Started
 
