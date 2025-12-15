@@ -154,23 +154,23 @@ export default function AboutPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background-alt">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-6">
               BRIDGE의 의미
             </h2>
+            <Image
+              src="/icons/BRIDGE-icon128.png"
+              alt="BRIDGE 로고"
+              width={128}
+              height={128}
+              className="drop-shadow-sm mx-auto mb-6"
+              priority
+            />
             <p className="text-foreground-light">
-              큰 브릿지 로고, 그리고 세 개의 점이 연결되는 다리
+              세 개의 점이 연결되는 다리
             </p>
           </div>
 
           <div className="flex flex-col items-center gap-10 mb-12">
-            <Image
-              src="/icons/bridge-icon.svg"
-              alt="BRIDGE 로고"
-              width={160}
-              height={160}
-              className="drop-shadow-sm"
-              priority
-            />
             <div className="flex items-center gap-4 md:gap-6">
               <div className="text-center">
                 <div className="w-12 h-12 rounded-full bg-bridge/30 mx-auto mb-3"></div>
@@ -190,7 +190,7 @@ export default function AboutPage() {
           </div>
 
           <p className="text-center text-foreground-light leading-relaxed max-w-2xl mx-auto">
-            BRIDGE 로고의 세 개의 점 중 가운데 진한 점은 <strong className="text-foreground">인간</strong>을,
+            가운데 진한 점은 <strong className="text-foreground">인간</strong>을,
             양쪽의 점은 <strong className="text-foreground">AI</strong>와 <strong className="text-foreground">세상</strong>을 의미합니다.
             <br /><br />
             BRIDGE는 인간이 AI와 나눈 대화를 세상과 연결하는 다리입니다.

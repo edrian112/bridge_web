@@ -4,26 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-interface HeaderProps {
-  ctaText?: string;
-  ctaHref?: string;
-  ctaColor?: "bridge" | "notes" | "pages";
-}
-
-export default function Header({
-  ctaText = "시작하기",
-  ctaHref = "/download",
-  ctaColor = "bridge"
-}: HeaderProps) {
+export default function Header() {
   const pathname = usePathname();
 
   const isActive = (path: string) => pathname === path;
-
-  const ctaColorClasses = {
-    bridge: "bg-bridge hover:bg-bridge-secondary",
-    notes: "bg-notes hover:bg-notes-secondary",
-    pages: "bg-pages hover:bg-pages-secondary",
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
@@ -57,14 +41,6 @@ export default function Header({
               className={isActive("/pricing") ? "text-bridge font-medium" : "text-foreground-light hover:text-bridge transition-colors"}
             >
               Pricing
-            </Link>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href={ctaHref}
-              className={`hidden sm:inline-flex px-4 py-2 ${ctaColorClasses[ctaColor]} text-white rounded-lg font-medium transition-colors`}
-            >
-              {ctaText}
             </Link>
           </div>
         </div>

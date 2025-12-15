@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function NotesPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header ctaText="설치하기" ctaColor="notes" />
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-notes-light">
@@ -31,17 +31,18 @@ export default function NotesPage() {
                 <strong className="text-foreground block mt-2">당신의 대화가 당신의 브랜드가 됩니다.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/download"
-                  className="px-8 py-4 bg-notes text-white rounded-xl font-semibold text-lg hover:bg-notes-secondary transition-colors shadow-lg shadow-notes/25"
+                <a
+                  href="/downloads/bridge-notes-extension.zip"
+                  download
+                  className="px-8 py-4 bg-notes text-white rounded-xl font-semibold text-lg hover:bg-notes-secondary transition-colors shadow-lg shadow-notes/25 text-center"
                 >
-                  무료로 다운로드
-                </Link>
+                  확장 프로그램 다운로드
+                </a>
                 <Link
-                  href="#how-it-works"
-                  className="px-8 py-4 bg-background border-2 border-notes/30 text-notes rounded-xl font-semibold text-lg hover:bg-notes/5 transition-colors"
+                  href="#install-guide"
+                  className="px-8 py-4 bg-background border-2 border-notes/30 text-notes rounded-xl font-semibold text-lg hover:bg-notes/5 transition-colors text-center"
                 >
-                  사용법 보기
+                  설치 가이드
                 </Link>
               </div>
             </div>
@@ -134,12 +135,78 @@ export default function NotesPage() {
         </div>
       </section>
 
+      {/* Install Guide Section */}
+      <section id="install-guide" className="py-20 px-4 sm:px-6 lg:px-8 bg-background-alt">
+        <div className="max-w-4xl mx-auto">
+          <SectionHeader title="설치 가이드" subtitle="3단계로 간단하게 설치하세요" />
+
+          <div className="space-y-6">
+            {/* Step 1 */}
+            <div className="bg-background rounded-2xl p-6 border border-border">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-notes rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  1
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">ZIP 파일 다운로드 및 압축 해제</h4>
+                  <p className="text-foreground-light mb-3">
+                    위의 &quot;확장 프로그램 다운로드&quot; 버튼을 클릭하여 ZIP 파일을 다운로드하고, 원하는 위치에 압축을 해제하세요.
+                  </p>
+                  <a
+                    href="/downloads/bridge-notes-extension.zip"
+                    download
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-notes/10 text-notes rounded-lg hover:bg-notes/20 transition-colors text-sm font-medium"
+                  >
+                    📦 bridge-notes-extension.zip 다운로드
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-background rounded-2xl p-6 border border-border">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-notes rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">Chrome 확장 프로그램 페이지 열기</h4>
+                  <p className="text-foreground-light mb-3">
+                    Chrome 브라우저 주소창에 아래 주소를 입력하고, <strong className="text-foreground">개발자 모드</strong>를 활성화하세요.
+                  </p>
+                  <code className="block bg-background-alt px-4 py-2 rounded-lg text-sm text-notes font-mono">
+                    chrome://extensions
+                  </code>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-background rounded-2xl p-6 border border-border">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-notes rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  3
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-foreground mb-2">확장 프로그램 로드</h4>
+                  <p className="text-foreground-light">
+                    &quot;압축해제된 확장 프로그램을 로드합니다&quot; 버튼을 클릭하고, 압축 해제한 폴더를 선택하세요.
+                    <br />
+                    <span className="text-notes">✓</span> 설치 완료! 이제 Claude, ChatGPT 등에서 BRIDGE Notes를 사용할 수 있습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <CTASection
         title="AI 대화를 브랜드로 만들 준비가 되셨나요?"
         subtitle="매월 5회 무료. 오늘의 대화가 내일의 브랜드가 됩니다."
-        buttonText="지금 다운로드하고 브랜딩 시작하기"
-        buttonHref="/download"
+        buttonText="설치 가이드 보기"
+        buttonHref="#install-guide"
         color="notes"
       />
 
