@@ -48,7 +48,7 @@ export default function PagesPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-pages/10 rounded-full text-pages text-sm font-medium mb-6">
-                <span>📝</span>
+                <Image src="/icons/Pages_icon48.png" alt="Pages" width={24} height={24} className="rounded" />
                 <span>블로그 콘텐츠 생산기 · Coming Soon</span>
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">

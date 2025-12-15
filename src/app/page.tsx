@@ -39,7 +39,7 @@ export default function Home() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-bridge-light rounded-full text-bridge-secondary text-sm font-medium mb-6">
-            <span>🌉</span>
+            <Image src="/icons/BRIDGE-icon48.png" alt="BRIDGE" width={24} height={24} className="rounded" />
             <span>From Chat to Brand</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
@@ -258,9 +258,7 @@ export default function Home() {
             {/* BRIDGE Notes */}
             <div className="bg-notes-light rounded-2xl p-8 border border-notes/20 hover:shadow-xl hover:shadow-notes/10 transition-all">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-notes rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">⚡</span>
-                </div>
+                <Image src="/icons/Notes_icon64.png" alt="BRIDGE Notes" width={48} height={48} className="rounded-xl" />
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">BRIDGE Notes</h3>
                   <p className="text-notes-secondary font-medium">SNS 콘텐츠 생산기</p>
@@ -301,9 +299,7 @@ export default function Home() {
             {/* BRIDGE Pages */}
             <div className="bg-pages-light rounded-2xl p-8 border border-pages/20 hover:shadow-xl hover:shadow-pages/10 transition-all">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-pages rounded-xl flex items-center justify-center">
-                  <span className="text-2xl">📝</span>
-                </div>
+                <Image src="/icons/Pages_icon64.png" alt="BRIDGE Pages" width={48} height={48} className="rounded-xl" />
                 <div>
                   <h3 className="text-2xl font-bold text-foreground">BRIDGE Pages</h3>
                   <p className="text-pages-secondary font-medium">블로그 콘텐츠 생산기</p>
