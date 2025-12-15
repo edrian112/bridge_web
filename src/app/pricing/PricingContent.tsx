@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 type Product = "notes" | "pages";
+type Plan = "free" | "basic" | "standard" | "max" | null;
 
 const PLANS = {
   notes: {
@@ -42,10 +43,50 @@ const FEATURES = {
 
 export default function PricingContent() {
   const [activeProduct, setActiveProduct] = useState<Product>("notes");
+  const [selectedPlan, setSelectedPlan] = useState<Plan>("standard");
 
   const isNotes = activeProduct === "notes";
   const plans = PLANS[activeProduct];
   const features = FEATURES[activeProduct];
+
+  const handleProductChange = (product: Product) => {
+    setActiveProduct(product);
+    setSelectedPlan("standard"); // Reset to standard when switching products
+  };
+
+  const getPlanCardClass = (plan: Plan) => {
+    const isSelected = selectedPlan === plan;
+    if (plan === "standard") {
+      return `rounded-2xl p-6 border-2 relative cursor-pointer transition-all ${
+        isNotes ? "border-notes" : "border-pages"
+      } ${
+        isSelected
+          ? isNotes
+            ? "bg-notes-light ring-2 ring-notes ring-offset-2"
+            : "bg-pages-light ring-2 ring-pages ring-offset-2"
+          : isNotes
+          ? "bg-notes-light/50 hover:bg-notes-light"
+          : "bg-pages-light/50 hover:bg-pages-light"
+      }`;
+    }
+    return `bg-background rounded-2xl p-6 border cursor-pointer transition-all ${
+      isSelected
+        ? isNotes
+          ? "border-notes ring-2 ring-notes ring-offset-2"
+          : "border-pages ring-2 ring-pages ring-offset-2"
+        : "border-border hover:border-foreground/30"
+    }`;
+  };
+
+  const getColumnHighlightClass = (plan: Plan) => {
+    if (selectedPlan !== plan) return "";
+    return isNotes ? "bg-notes/10" : "bg-pages/10";
+  };
+
+  const getHeaderHighlightClass = (plan: Plan) => {
+    if (selectedPlan !== plan) return "";
+    return isNotes ? "bg-notes text-white" : "bg-pages text-white";
+  };
 
   return (
     <>
@@ -53,7 +94,7 @@ export default function PricingContent() {
       <div className="flex justify-center mb-12">
         <div className="inline-flex bg-background-alt rounded-2xl p-1.5 gap-1">
           <button
-            onClick={() => setActiveProduct("notes")}
+            onClick={() => handleProductChange("notes")}
             className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
               activeProduct === "notes"
                 ? "bg-notes text-white shadow-lg"
@@ -62,14 +103,16 @@ export default function PricingContent() {
           >
             <span className="text-lg">⚡</span>
             BRIDGE Notes
-            <span className={`text-xs px-2 py-0.5 rounded-full ${
-              activeProduct === "notes" ? "bg-white/20" : "bg-notes-light text-notes"
-            }`}>
+            <span
+              className={`text-xs px-2 py-0.5 rounded-full ${
+                activeProduct === "notes" ? "bg-white/20" : "bg-notes-light text-notes"
+              }`}
+            >
               출시됨
             </span>
           </button>
           <button
-            onClick={() => setActiveProduct("pages")}
+            onClick={() => handleProductChange("pages")}
             className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
               activeProduct === "pages"
                 ? "bg-pages text-white shadow-lg"
@@ -78,9 +121,11 @@ export default function PricingContent() {
           >
             <span className="text-lg">📝</span>
             BRIDGE Pages
-            <span className={`text-xs px-2 py-0.5 rounded-full ${
-              activeProduct === "pages" ? "bg-white/20" : "bg-pages-light text-pages"
-            }`}>
+            <span
+              className={`text-xs px-2 py-0.5 rounded-full ${
+                activeProduct === "pages" ? "bg-white/20" : "bg-pages-light text-pages"
+              }`}
+            >
               Coming
             </span>
           </button>
@@ -90,7 +135,7 @@ export default function PricingContent() {
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         {/* Free */}
-        <div className="bg-background rounded-2xl p-6 border border-border">
+        <div className={getPlanCardClass("free")} onClick={() => setSelectedPlan("free")}>
           <h3 className="font-semibold text-foreground mb-2">Free</h3>
           <div className="text-3xl font-bold text-foreground mb-1">₩0</div>
           <p className="text-sm text-foreground-light mb-4">매월</p>
@@ -101,13 +146,14 @@ export default function PricingContent() {
           <Link
             href="/download"
             className="block w-full py-3 text-center bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
+            onClick={(e) => e.stopPropagation()}
           >
             무료로 시작
           </Link>
         </div>
 
         {/* Basic */}
-        <div className="bg-background rounded-2xl p-6 border border-border">
+        <div className={getPlanCardClass("basic")} onClick={() => setSelectedPlan("basic")}>
           <h3 className="font-semibold text-foreground mb-2">Basic</h3>
           <div className="text-3xl font-bold text-foreground mb-1">₩4,900</div>
           <p className="text-sm text-foreground-light mb-4">1회 구매</p>
@@ -118,6 +164,7 @@ export default function PricingContent() {
             <Link
               href="/checkout?plan=basic30&product=notes"
               className="block w-full py-3 text-center bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
+              onClick={(e) => e.stopPropagation()}
             >
               ₩4,900 구매
             </Link>
@@ -129,8 +176,12 @@ export default function PricingContent() {
         </div>
 
         {/* Standard */}
-        <div className={`rounded-2xl p-6 border-2 relative ${isNotes ? "bg-notes-light border-notes" : "bg-pages-light border-pages"}`}>
-          <div className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-white text-xs font-medium rounded-full ${isNotes ? "bg-notes" : "bg-pages"}`}>
+        <div className={getPlanCardClass("standard")} onClick={() => setSelectedPlan("standard")}>
+          <div
+            className={`absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 text-white text-xs font-medium rounded-full ${
+              isNotes ? "bg-notes" : "bg-pages"
+            }`}
+          >
             인기
           </div>
           <h3 className="font-semibold text-foreground mb-2">Standard</h3>
@@ -143,6 +194,7 @@ export default function PricingContent() {
             <Link
               href="/checkout?plan=standard70&product=notes"
               className="block w-full py-3 text-center bg-notes text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
+              onClick={(e) => e.stopPropagation()}
             >
               ₩9,900 구매
             </Link>
@@ -154,7 +206,7 @@ export default function PricingContent() {
         </div>
 
         {/* MAX */}
-        <div className="bg-background rounded-2xl p-6 border border-border">
+        <div className={getPlanCardClass("max")} onClick={() => setSelectedPlan("max")}>
           <h3 className="font-semibold text-foreground mb-2">MAX</h3>
           <div className="text-3xl font-bold text-foreground mb-1">₩29,000</div>
           <p className="text-sm text-foreground-light mb-4">월 구독</p>
@@ -166,6 +218,7 @@ export default function PricingContent() {
             <Link
               href="/checkout?plan=max&product=notes"
               className="block w-full py-3 text-center bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
+              onClick={(e) => e.stopPropagation()}
             >
               ₩29,000/월 구독
             </Link>
@@ -177,6 +230,22 @@ export default function PricingContent() {
         </div>
       </div>
 
+      {/* Selected Plan Indicator */}
+      {selectedPlan && (
+        <div className="text-center mb-6">
+          <span className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${
+            isNotes ? "bg-notes/10 text-notes" : "bg-pages/10 text-pages"
+          }`}>
+            <span className="w-2 h-2 rounded-full bg-current animate-pulse" />
+            {selectedPlan === "free" && "Free"}
+            {selectedPlan === "basic" && "Basic"}
+            {selectedPlan === "standard" && "Standard"}
+            {selectedPlan === "max" && "MAX"}
+            {" "}플랜 기능 비교
+          </span>
+        </div>
+      )}
+
       {/* Feature Comparison */}
       <div className="mb-12">
         <h2 className="text-2xl font-bold text-foreground mb-6 text-center">기능 비교</h2>
@@ -185,27 +254,55 @@ export default function PricingContent() {
             <thead>
               <tr className="bg-background-alt">
                 <th className="text-left p-4 font-semibold text-foreground">기능</th>
-                <th className="text-center p-4 font-semibold text-foreground">Free</th>
-                <th className="text-center p-4 font-semibold text-foreground">Basic</th>
-                <th className={`text-center p-4 font-semibold text-foreground ${isNotes ? "bg-notes-light" : "bg-pages-light"}`}>Standard</th>
-                <th className="text-center p-4 font-semibold text-foreground">MAX</th>
+                <th
+                  className={`text-center p-4 font-semibold cursor-pointer transition-all rounded-t-lg ${
+                    getHeaderHighlightClass("free") || "text-foreground hover:bg-foreground/5"
+                  }`}
+                  onClick={() => setSelectedPlan("free")}
+                >
+                  Free
+                </th>
+                <th
+                  className={`text-center p-4 font-semibold cursor-pointer transition-all rounded-t-lg ${
+                    getHeaderHighlightClass("basic") || "text-foreground hover:bg-foreground/5"
+                  }`}
+                  onClick={() => setSelectedPlan("basic")}
+                >
+                  Basic
+                </th>
+                <th
+                  className={`text-center p-4 font-semibold cursor-pointer transition-all rounded-t-lg ${
+                    getHeaderHighlightClass("standard") || "text-foreground hover:bg-foreground/5"
+                  }`}
+                  onClick={() => setSelectedPlan("standard")}
+                >
+                  Standard
+                </th>
+                <th
+                  className={`text-center p-4 font-semibold cursor-pointer transition-all rounded-t-lg ${
+                    getHeaderHighlightClass("max") || "text-foreground hover:bg-foreground/5"
+                  }`}
+                  onClick={() => setSelectedPlan("max")}
+                >
+                  MAX
+                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {features.map((feature, index) => (
                 <tr key={index}>
                   <td className="p-4 text-foreground">{feature.name}</td>
-                  <td className="p-4 text-center">
-                    {renderFeatureValue(feature.free, isNotes)}
+                  <td className={`p-4 text-center transition-all ${getColumnHighlightClass("free")}`}>
+                    {renderFeatureValue(feature.free, isNotes, selectedPlan === "free")}
                   </td>
-                  <td className="p-4 text-center">
-                    {renderFeatureValue(feature.basic, isNotes)}
+                  <td className={`p-4 text-center transition-all ${getColumnHighlightClass("basic")}`}>
+                    {renderFeatureValue(feature.basic, isNotes, selectedPlan === "basic")}
                   </td>
-                  <td className={`p-4 text-center ${isNotes ? "bg-notes-light/50" : "bg-pages-light/50"}`}>
-                    {renderFeatureValue(feature.standard, isNotes)}
+                  <td className={`p-4 text-center transition-all ${getColumnHighlightClass("standard")}`}>
+                    {renderFeatureValue(feature.standard, isNotes, selectedPlan === "standard")}
                   </td>
-                  <td className="p-4 text-center">
-                    {renderFeatureValue(feature.max, isNotes)}
+                  <td className={`p-4 text-center transition-all ${getColumnHighlightClass("max")}`}>
+                    {renderFeatureValue(feature.max, isNotes, selectedPlan === "max")}
                   </td>
                 </tr>
               ))}
@@ -221,9 +318,15 @@ export default function PricingContent() {
           <div>
             <h3 className="font-semibold text-foreground mb-2">알아두세요</h3>
             <ul className="space-y-2 text-foreground-light text-sm">
-              <li>• <strong>캡처는 항상 무료</strong>입니다. AI 변환 횟수만 차감됩니다.</li>
-              <li>• BRIDGE Notes와 BRIDGE Pages는 <strong>별도 과금</strong>입니다.</li>
-              <li>• <strong>MAX 플랜만</strong> Notes와 Pages가 연동되어 모두 무제한으로 사용 가능합니다.</li>
+              <li>
+                • <strong>캡처는 항상 무료</strong>입니다. AI 변환 횟수만 차감됩니다.
+              </li>
+              <li>
+                • BRIDGE Notes와 BRIDGE Pages는 <strong>별도 과금</strong>입니다.
+              </li>
+              <li>
+                • <strong>MAX 플랜만</strong> Notes와 Pages가 연동되어 모두 무제한으로 사용 가능합니다.
+              </li>
             </ul>
           </div>
         </div>
@@ -232,12 +335,22 @@ export default function PricingContent() {
   );
 }
 
-function renderFeatureValue(value: boolean | string, isNotes: boolean) {
+function renderFeatureValue(value: boolean | string, isNotes: boolean, isHighlighted: boolean) {
+  const baseClass = isHighlighted ? "font-semibold scale-110 inline-block" : "";
+
   if (value === true) {
-    return <span className={isNotes ? "text-notes" : "text-pages"}>✓</span>;
+    return (
+      <span className={`${isNotes ? "text-notes" : "text-pages"} ${baseClass}`}>
+        {isHighlighted ? "✓" : "✓"}
+      </span>
+    );
   }
   if (value === false) {
-    return <span className="text-foreground-light">-</span>;
+    return <span className={`text-foreground-light ${baseClass}`}>-</span>;
   }
-  return <span className="text-foreground-light">{value}</span>;
+  return (
+    <span className={`${isHighlighted ? (isNotes ? "text-notes" : "text-pages") : "text-foreground-light"} ${baseClass}`}>
+      {value}
+    </span>
+  );
 }
