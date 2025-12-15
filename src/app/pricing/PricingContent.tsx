@@ -141,7 +141,7 @@ export default function PricingContent() {
           </div>
           <Link
             href="/download"
-            className="block w-full py-3 text-center bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
+            className={`block w-full py-3 text-center text-white rounded-lg font-medium hover:opacity-90 transition-opacity ${isNotes ? "bg-notes" : "bg-pages"}`}
             onClick={(e) => e.stopPropagation()}
           >
             무료로 시작
@@ -159,13 +159,13 @@ export default function PricingContent() {
           {isNotes ? (
             <Link
               href="/checkout?plan=basic30&product=notes"
-              className="block w-full py-3 text-center bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
+              className="block w-full py-3 text-center bg-notes text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
               onClick={(e) => e.stopPropagation()}
             >
               ₩4,900 구매
             </Link>
           ) : (
-            <span className="block w-full py-3 text-center bg-pages/10 text-pages rounded-lg font-medium">
+            <span className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium">
               출시 후 구매
             </span>
           )}
@@ -208,7 +208,7 @@ export default function PricingContent() {
           <p className="text-sm text-foreground-light mb-4">월 구독</p>
           <div className={`text-2xl font-bold ${isNotes ? "text-notes" : "text-pages"}`}>
             {plans.max.count}
-            <span className={`text-sm font-medium ${isNotes ? "text-notes" : "text-pages"} ml-1`}>
+            <span className="text-sm font-medium text-bridge ml-1">
               · Notes + Pages
             </span>
           </div>
@@ -216,13 +216,13 @@ export default function PricingContent() {
           {isNotes ? (
             <Link
               href="/checkout?plan=max&product=notes"
-              className="block w-full py-3 text-center bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
+              className="block w-full py-3 text-center bg-notes text-white rounded-lg font-medium hover:opacity-90 transition-opacity"
               onClick={(e) => e.stopPropagation()}
             >
               ₩29,000/월 구독
             </Link>
           ) : (
-            <span className="block w-full py-3 text-center bg-pages/10 text-pages rounded-lg font-medium">
+            <span className="block w-full py-3 text-center bg-pages text-white rounded-lg font-medium">
               출시 후 구독
             </span>
           )}
