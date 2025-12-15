@@ -43,7 +43,7 @@ export default function PricingPage() {
             {/* Basic */}
             <div className="text-center p-4">
               <h3 className="font-semibold text-foreground mb-2">Basic</h3>
-              <div className="text-3xl font-bold text-foreground">₩5,000</div>
+              <div className="text-3xl font-bold text-foreground">₩4,900</div>
               <p className="text-sm text-foreground-light mt-1">1회 구매</p>
             </div>
             {/* Standard */}
@@ -52,7 +52,7 @@ export default function PricingPage() {
                 인기
               </div>
               <h3 className="font-semibold text-foreground mb-2">Standard</h3>
-              <div className="text-3xl font-bold text-foreground">₩10,000</div>
+              <div className="text-3xl font-bold text-foreground">₩9,900</div>
               <p className="text-sm text-foreground-light mt-1">1회 구매</p>
             </div>
             {/* MAX */}
@@ -60,6 +60,7 @@ export default function PricingPage() {
               <h3 className="font-semibold text-foreground mb-2">MAX</h3>
               <div className="text-3xl font-bold text-foreground">₩29,000</div>
               <p className="text-sm text-foreground-light mt-1">월 구독</p>
+              <p className="text-xs text-bridge mt-1">Notes + Pages</p>
             </div>
           </div>
 
@@ -117,7 +118,7 @@ export default function PricingPage() {
               </div>
               {/* Free */}
               <div className="bg-background border border-border rounded-xl p-4 text-center">
-                <p className="text-2xl font-bold text-pages">5회</p>
+                <p className="text-2xl font-bold text-pages">3회</p>
                 <p className="text-sm text-foreground-light">/월</p>
               </div>
               {/* Basic */}
@@ -176,11 +177,11 @@ export default function PricingPage() {
                   </tr>
                   {/* 템플릿 */}
                   <tr>
-                    <td className="p-4 text-foreground">템플릿</td>
-                    <td className="p-4 text-center text-bridge">✓</td>
-                    <td className="p-4 text-center text-bridge">✓</td>
-                    <td className="p-4 text-center text-bridge bg-bridge-light/50">✓</td>
-                    <td className="p-4 text-center text-bridge">✓</td>
+                    <td className="p-4 text-foreground">템플릿 (개인화/전문화)</td>
+                    <td className="p-4 text-center text-foreground-light">2가지</td>
+                    <td className="p-4 text-center text-foreground-light">2가지</td>
+                    <td className="p-4 text-center text-foreground-light bg-bridge-light/50">2가지</td>
+                    <td className="p-4 text-center text-foreground-light">2가지</td>
                   </tr>
                   {/* AI 모델 선택 */}
                   <tr>
@@ -225,8 +226,23 @@ export default function PricingPage() {
             </div>
           </div>
 
+          {/* Important Notes */}
+          <div className="mt-12 mb-8 p-6 bg-background-alt rounded-2xl border border-border">
+            <div className="flex items-start gap-3">
+              <span className="text-2xl">💡</span>
+              <div>
+                <h3 className="font-semibold text-foreground mb-2">알아두세요</h3>
+                <ul className="space-y-2 text-foreground-light text-sm">
+                  <li>• <strong>캡처는 항상 무료</strong>입니다. AI 변환 횟수만 차감됩니다.</li>
+                  <li>• BRIDGE Notes와 BRIDGE Pages는 <strong>별도 과금</strong>입니다.</li>
+                  <li>• <strong>MAX 플랜만</strong> Notes와 Pages가 연동되어 모두 무제한으로 사용 가능합니다.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
           {/* CTA Buttons */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Free */}
             <div className="bg-background rounded-2xl p-6 border border-border text-center">
               <h3 className="font-semibold text-foreground mb-2">Free</h3>
@@ -243,10 +259,10 @@ export default function PricingPage() {
               <h3 className="font-semibold text-foreground mb-2">Basic</h3>
               <p className="text-sm text-foreground-light mb-4">가벼운 사용자를 위해</p>
               <Link
-                href="#"
+                href="/checkout?plan=basic30&product=notes"
                 className="block w-full py-3 bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
               >
-                ₩5,000 구매
+                ₩4,900 구매
               </Link>
             </div>
             {/* Standard */}
@@ -254,18 +270,18 @@ export default function PricingPage() {
               <h3 className="font-semibold text-foreground mb-2">Standard</h3>
               <p className="text-sm text-foreground-light mb-4">대부분의 사용자에게 추천</p>
               <Link
-                href="#"
+                href="/checkout?plan=standard70&product=notes"
                 className="block w-full py-3 bg-bridge text-white rounded-lg font-medium hover:bg-bridge-secondary transition-colors"
               >
-                ₩10,000 구매
+                ₩9,900 구매
               </Link>
             </div>
             {/* MAX */}
             <div className="bg-background rounded-2xl p-6 border border-border text-center">
               <h3 className="font-semibold text-foreground mb-2">MAX</h3>
-              <p className="text-sm text-foreground-light mb-4">파워 유저를 위해</p>
+              <p className="text-sm text-foreground-light mb-4">Notes + Pages 무제한</p>
               <Link
-                href="#"
+                href="/checkout?plan=max&product=notes"
                 className="block w-full py-3 bg-foreground/10 text-foreground rounded-lg font-medium hover:bg-foreground/20 transition-colors"
               >
                 ₩29,000/월 구독
@@ -303,10 +319,10 @@ export default function PricingPage() {
             {/* FAQ 3 */}
             <div className="bg-background rounded-2xl p-6 border border-border">
               <h3 className="font-semibold text-foreground mb-2">
-                Free 플랜의 5회는 매월 리셋되나요?
+                Free 플랜의 무료 횟수는 매월 리셋되나요?
               </h3>
               <p className="text-foreground-light">
-                네, Free 플랜의 5회 무료 사용은 매월 1일에 리셋됩니다.
+                네, Free 플랜의 무료 사용 횟수(Notes 5회, Pages 3회)는 매월 1일에 리셋됩니다.
                 사용하지 않은 횟수는 다음 달로 이월되지 않습니다.
               </p>
             </div>
@@ -323,11 +339,23 @@ export default function PricingPage() {
             {/* FAQ 5 */}
             <div className="bg-background rounded-2xl p-6 border border-border">
               <h3 className="font-semibold text-foreground mb-2">
-                Notes와 Pages를 함께 사용하면 할인이 있나요?
+                Notes와 Pages는 같이 결제되나요?
               </h3>
               <p className="text-foreground-light">
-                현재는 별도의 번들 할인이 없습니다. 단, MAX 플랜은 Notes와 Pages 모두에서 무제한으로 사용 가능하므로,
-                두 제품을 자주 사용하신다면 MAX 플랜을 추천드립니다.
+                아니요, BRIDGE Notes와 BRIDGE Pages는 <strong>완전히 별도의 과금 시스템</strong>입니다.
+                각각 독립적으로 플랜을 선택하고 구매합니다.
+                단, <strong>MAX 플랜</strong>은 Notes와 Pages가 연동되어 하나의 구독으로 두 제품 모두 무제한 사용이 가능합니다.
+              </p>
+            </div>
+            {/* FAQ 6 */}
+            <div className="bg-background rounded-2xl p-6 border border-border">
+              <h3 className="font-semibold text-foreground mb-2">
+                캡처도 횟수에 포함되나요?
+              </h3>
+              <p className="text-foreground-light">
+                아니요, <strong>캡처는 항상 무료</strong>입니다.
+                AI 변환 기능(대화 정리, 콘텐츠 생성)을 사용할 때만 횟수가 차감됩니다.
+                마음껏 캡처하고, 필요할 때만 AI 변환을 사용하세요.
               </p>
             </div>
           </div>
@@ -341,7 +369,7 @@ export default function PricingPage() {
             지금 무료로 시작하세요
           </h2>
           <p className="text-lg text-foreground-light mb-10">
-            매월 5회 무료. 신용카드 필요 없음. 언제든 업그레이드 가능.
+            매월 무료로 시작. 신용카드 필요 없음. 언제든 업그레이드 가능.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
