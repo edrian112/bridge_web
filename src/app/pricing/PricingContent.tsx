@@ -41,6 +41,13 @@ const FEATURES = {
   ],
 };
 
+// MAX 플랜 통합 혜택 (Notes + Pages)
+const MAX_INTEGRATED_FEATURES = [
+  "BRIDGE Notes 무제한",
+  "BRIDGE Pages 무제한",
+  "하나의 구독으로 모든 제품 이용",
+];
+
 export default function PricingContent() {
   const [activeProduct, setActiveProduct] = useState<Product>("notes");
   const [selectedPlan, setSelectedPlan] = useState<Plan>("standard");
@@ -306,8 +313,70 @@ export default function PricingContent() {
                   </td>
                 </tr>
               ))}
+              {/* MAX 플랜 통합 혜택 강조 행 */}
+              <tr className="bg-gradient-to-r from-notes/5 via-bridge/10 to-pages/5">
+                <td className="p-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">🎁</span>
+                    <span className="font-semibold text-foreground">Notes + Pages 통합</span>
+                  </div>
+                </td>
+                <td className={`p-4 text-center transition-all ${getColumnHighlightClass("free")}`}>
+                  <span className="text-foreground-light">-</span>
+                </td>
+                <td className={`p-4 text-center transition-all ${getColumnHighlightClass("basic")}`}>
+                  <span className="text-foreground-light">-</span>
+                </td>
+                <td className={`p-4 text-center transition-all ${getColumnHighlightClass("standard")}`}>
+                  <span className="text-foreground-light">-</span>
+                </td>
+                <td className={`p-4 text-center transition-all ${getColumnHighlightClass("max")}`}>
+                  <div className="flex flex-col items-center gap-1">
+                    <span className={`font-bold ${selectedPlan === "max" ? "text-bridge scale-110" : "text-bridge"}`}>
+                      ✓ 통합
+                    </span>
+                  </div>
+                </td>
+              </tr>
             </tbody>
           </table>
+        </div>
+
+        {/* MAX 플랜 통합 혜택 상세 */}
+        <div
+          className={`mt-4 p-4 rounded-xl border-2 transition-all cursor-pointer ${
+            selectedPlan === "max"
+              ? "bg-gradient-to-r from-notes/10 via-bridge/15 to-pages/10 border-bridge shadow-lg"
+              : "bg-background-alt border-border hover:border-bridge/50"
+          }`}
+          onClick={() => setSelectedPlan("max")}
+        >
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-notes to-pages rounded-xl flex items-center justify-center flex-shrink-0">
+              <span className="text-white text-lg">∞</span>
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <h4 className="font-bold text-foreground">MAX 플랜 특별 혜택</h4>
+                <span className="px-2 py-0.5 bg-bridge text-white text-xs font-medium rounded-full">
+                  Only MAX
+                </span>
+              </div>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {MAX_INTEGRATED_FEATURES.map((feature, index) => (
+                  <div key={index} className="flex items-center gap-2 text-sm">
+                    <span className="text-bridge">✓</span>
+                    <span className={selectedPlan === "max" ? "text-foreground font-medium" : "text-foreground-light"}>
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-2 text-xs text-foreground-light">
+                MAX 플랜은 BRIDGE Notes와 BRIDGE Pages를 하나의 구독으로 무제한 이용할 수 있는 유일한 플랜입니다.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
