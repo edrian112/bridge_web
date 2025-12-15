@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "가격 정책 - Bridge | From Chat to Brand",
+  title: "가격 정책 - BRIDGE | From Chat to Brand",
   description:
-    "AI 대화를 브랜드로 만드는 Bridge의 심플한 가격 정책. 동일한 가격, 제품별 최적화된 사용 횟수.",
+    "AI 대화를 브랜드로 만드는 BRIDGE의 심플한 가격 정책. 동일한 가격, 제품별 최적화된 사용 횟수.",
 };
 
 export default function PricingPage() {
@@ -15,17 +16,15 @@ export default function PricingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl text-foreground">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               <Link href="/notes" className="text-foreground-light hover:text-notes transition-colors">
-                Bridge Notes
+                BRIDGE Notes
               </Link>
               <Link href="/pages" className="text-foreground-light hover:text-pages transition-colors">
-                Bridge Pages
+                BRIDGE Pages
               </Link>
               <Link href="/pricing" className="text-bridge font-medium">
                 가격
@@ -92,13 +91,13 @@ export default function PricingPage() {
             </div>
           </div>
 
-          {/* Bridge Notes Section */}
+          {/* BRIDGE Notes Section */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-notes rounded-xl flex items-center justify-center">
                 <span className="text-xl">⚡</span>
               </div>
-              <h2 className="text-2xl font-bold text-foreground">Bridge Notes</h2>
+              <h2 className="text-2xl font-bold text-foreground">BRIDGE Notes</h2>
               <span className="px-3 py-1 bg-notes-light text-notes text-sm font-medium rounded-full">
                 출시됨
               </span>
@@ -128,13 +127,13 @@ export default function PricingPage() {
             </div>
           </div>
 
-          {/* Bridge Pages Section */}
+          {/* BRIDGE Pages Section */}
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-pages rounded-xl flex items-center justify-center">
                 <span className="text-xl">📝</span>
               </div>
-              <h2 className="text-2xl font-bold text-foreground">Bridge Pages</h2>
+              <h2 className="text-2xl font-bold text-foreground">BRIDGE Pages</h2>
               <span className="px-3 py-1 bg-pages-light text-pages text-sm font-medium rounded-full">
                 Coming Soon
               </span>
@@ -320,10 +319,10 @@ export default function PricingPage() {
             {/* FAQ 1 */}
             <div className="bg-background rounded-2xl p-6 border border-border">
               <h3 className="font-semibold text-foreground mb-2">
-                Bridge Notes와 Bridge Pages의 가격이 같은데, 횟수가 다른 이유는?
+                BRIDGE Notes와 BRIDGE Pages의 가격이 같은데, 횟수가 다른 이유는?
               </h3>
               <p className="text-foreground-light">
-                Bridge Notes는 짧은 글(SNS용)을 생성하고, Bridge Pages는 긴 글(블로그용)을 생성합니다.
+                BRIDGE Notes는 짧은 글(SNS용)을 생성하고, BRIDGE Pages는 긴 글(블로그용)을 생성합니다.
                 긴 글 생성에는 더 많은 AI 리소스가 필요하기 때문에, 동일한 가격에서 횟수를 조정했습니다.
               </p>
             </div>
@@ -402,10 +401,8 @@ export default function PricingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl">BRIDGE</span>
             </div>
             <div className="flex gap-8 text-sm">
               <Link href="/notes" className="hover:text-notes transition-colors">
@@ -421,7 +418,7 @@ export default function PricingPage() {
                 문서
               </Link>
             </div>
-            <p className="text-sm opacity-70">© 2025 Bridge. From Chat to Brand.</p>
+            <p className="text-sm opacity-70">© 2025 BRIDGE. From Chat to Brand.</p>
           </div>
         </div>
       </footer>

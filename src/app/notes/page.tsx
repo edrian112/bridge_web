@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bridge Notes - AI 대화를 SNS 콘텐츠로",
+  title: "BRIDGE Notes - AI 대화를 SNS 콘텐츠로",
   description:
     "AI 대화를 두 클릭으로 캡처하고 SNS 콘텐츠로 변환. 당신의 대화가 브랜드가 됩니다. From Chat to Brand.",
 };
@@ -15,17 +16,15 @@ export default function NotesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl text-foreground">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               <Link href="/notes" className="text-notes font-medium">
-                Bridge Notes
+                BRIDGE Notes
               </Link>
               <Link href="/pages" className="text-foreground-light hover:text-pages transition-colors">
-                Bridge Pages
+                BRIDGE Pages
               </Link>
               <Link href="/pricing" className="text-foreground-light hover:text-foreground transition-colors">
                 가격
@@ -373,17 +372,15 @@ export default function NotesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl">BRIDGE</span>
             </div>
             <div className="flex gap-8 text-sm">
               <Link href="/notes" className="hover:text-notes transition-colors">
-                Bridge Notes
+                BRIDGE Notes
               </Link>
               <Link href="/pages" className="hover:text-pages transition-colors">
-                Bridge Pages
+                BRIDGE Pages
               </Link>
               <Link href="/pricing" className="hover:text-bridge transition-colors">
                 가격
@@ -392,7 +389,7 @@ export default function NotesPage() {
                 문서
               </Link>
             </div>
-            <p className="text-sm opacity-70">© 2025 Bridge. From Chat to Brand.</p>
+            <p className="text-sm opacity-70">© 2025 BRIDGE. From Chat to Brand.</p>
           </div>
         </div>
       </footer>

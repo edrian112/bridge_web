@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -8,17 +9,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl text-foreground">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               <Link href="/notes" className="text-foreground-light hover:text-notes transition-colors">
-                Bridge Notes
+                BRIDGE Notes
               </Link>
               <Link href="/pages" className="text-foreground-light hover:text-pages transition-colors">
-                Bridge Pages
+                BRIDGE Pages
               </Link>
               <Link href="/pricing" className="text-foreground-light hover:text-foreground transition-colors">
                 가격
@@ -51,7 +50,7 @@ export default function Home() {
             매일 AI와 나누는 대화 속에 당신만의 인사이트가 있습니다.
           </p>
           <p className="text-lg text-foreground max-w-2xl mx-auto mb-10 font-medium">
-            Bridge가 그 대화를 <span className="text-bridge">콘텐츠</span>로, 콘텐츠를 <span className="text-bridge">브랜드</span>로 만들어 드립니다.
+            BRIDGE가 그 대화를 <span className="text-bridge">콘텐츠</span>로, 콘텐츠를 <span className="text-bridge">브랜드</span>로 만들어 드립니다.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -115,7 +114,7 @@ export default function Home() {
             <div className="bg-bridge-light rounded-2xl p-8 border border-bridge/20">
               <div className="text-bridge font-semibold mb-4 flex items-center gap-2">
                 <span className="text-2xl">🚀</span>
-                <span>Bridge를 쓰는 당신</span>
+                <span>BRIDGE를 쓰는 당신</span>
               </div>
               <ul className="space-y-4 text-foreground">
                 <li className="flex items-start gap-3">
@@ -201,7 +200,7 @@ export default function Home() {
               AI 대화 → 콘텐츠 → 브랜드
             </h2>
             <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              Bridge가 그 여정을 연결합니다
+              BRIDGE가 그 여정을 연결합니다
             </p>
           </div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0">
@@ -220,7 +219,7 @@ export default function Home() {
                 <span className="text-4xl">👆</span>
               </div>
               <h4 className="font-bold text-foreground mb-2">두 클릭 캡처</h4>
-              <p className="text-sm text-foreground-light">좋은 부분을<br />Bridge로 캡처합니다</p>
+              <p className="text-sm text-foreground-light">좋은 부분을<br />BRIDGE로 캡처합니다</p>
             </div>
             <div className="hidden md:block text-4xl text-bridge font-bold">→</div>
             {/* Step 3 */}
@@ -256,14 +255,14 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Bridge Notes */}
+            {/* BRIDGE Notes */}
             <div className="bg-notes-light rounded-2xl p-8 border border-notes/20 hover:shadow-xl hover:shadow-notes/10 transition-all">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-notes rounded-xl flex items-center justify-center">
                   <span className="text-2xl">⚡</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground">Bridge Notes</h3>
+                  <h3 className="text-2xl font-bold text-foreground">BRIDGE Notes</h3>
                   <p className="text-notes-secondary font-medium">SNS 콘텐츠 생산기</p>
                 </div>
               </div>
@@ -296,17 +295,17 @@ export default function Home() {
                 href="/notes"
                 className="inline-flex px-6 py-3 bg-notes text-white rounded-lg font-medium hover:bg-notes-secondary transition-colors"
               >
-                Bridge Notes로 시작하기 →
+                BRIDGE Notes로 시작하기 →
               </Link>
             </div>
-            {/* Bridge Pages */}
+            {/* BRIDGE Pages */}
             <div className="bg-pages-light rounded-2xl p-8 border border-pages/20 hover:shadow-xl hover:shadow-pages/10 transition-all">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-pages rounded-xl flex items-center justify-center">
                   <span className="text-2xl">📝</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground">Bridge Pages</h3>
+                  <h3 className="text-2xl font-bold text-foreground">BRIDGE Pages</h3>
                   <p className="text-pages-secondary font-medium">블로그 콘텐츠 생산기</p>
                 </div>
                 <span className="ml-auto px-2 py-1 bg-pages/20 text-pages text-xs font-medium rounded">Coming Soon</span>
@@ -341,7 +340,7 @@ export default function Home() {
                 href="/pages"
                 className="inline-flex px-6 py-3 bg-pages text-white rounded-lg font-medium hover:bg-pages-secondary transition-colors"
               >
-                Bridge Pages 알아보기 →
+                BRIDGE Pages 알아보기 →
               </Link>
             </div>
           </div>
@@ -426,7 +425,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-bridge-light rounded-full text-bridge-secondary text-sm font-medium mb-6">
             <span>💡</span>
-            <span>Bridge의 철학</span>
+            <span>BRIDGE의 철학</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
             "오늘의 대화가 <span className="text-bridge">내일의 브랜드</span>가 됩니다"
@@ -438,7 +437,7 @@ export default function Home() {
             <br /><br />
             <strong className="text-foreground">공유하는 순간, 대화는 브랜드가 됩니다.</strong>
             <br />
-            Bridge는 그 다리입니다.
+            BRIDGE는 그 다리입니다.
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
             <div className="p-6 bg-background-alt rounded-xl">
@@ -488,19 +487,17 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl">BRIDGE</span>
             </div>
             <div className="flex gap-8 text-sm">
-              <Link href="/notes" className="hover:text-bridge transition-colors">Bridge Notes</Link>
-              <Link href="/pages" className="hover:text-bridge transition-colors">Bridge Pages</Link>
+              <Link href="/notes" className="hover:text-bridge transition-colors">BRIDGE Notes</Link>
+              <Link href="/pages" className="hover:text-bridge transition-colors">BRIDGE Pages</Link>
               <Link href="/pricing" className="hover:text-bridge transition-colors">가격</Link>
               <Link href="/docs" className="hover:text-bridge transition-colors">문서</Link>
             </div>
             <p className="text-sm opacity-70">
-              © 2025 Bridge. From Chat to Brand.
+              © 2025 BRIDGE. From Chat to Brand.
             </p>
           </div>
         </div>

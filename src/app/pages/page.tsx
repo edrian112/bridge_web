@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Bridge Pages - AI 대화를 블로그 콘텐츠로",
+  title: "BRIDGE Pages - AI 대화를 블로그 콘텐츠로",
   description:
     "AI 대화를 SEO 최적화된 블로그 포스트로 확장. 당신의 대화가 브랜드가 됩니다. From Chat to Brand.",
 };
@@ -15,17 +16,15 @@ export default function PagesPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl text-foreground">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl text-foreground">BRIDGE</span>
             </Link>
             <div className="hidden md:flex items-center gap-8">
               <Link href="/notes" className="text-foreground-light hover:text-notes transition-colors">
-                Bridge Notes
+                BRIDGE Notes
               </Link>
               <Link href="/pages" className="text-pages font-medium">
-                Bridge Pages
+                BRIDGE Pages
               </Link>
               <Link href="/pricing" className="text-foreground-light hover:text-foreground transition-colors">
                 가격
@@ -71,7 +70,7 @@ export default function PagesPage() {
                   href="/notes"
                   className="px-8 py-4 bg-background border-2 border-pages/30 text-pages rounded-xl font-semibold text-lg hover:bg-pages/5 transition-colors"
                 >
-                  Start with Bridge Notes
+                  Start with BRIDGE Notes
                 </Link>
               </div>
             </div>
@@ -93,7 +92,7 @@ export default function PagesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Bridge Pages의 가치
+              BRIDGE Pages의 가치
             </h2>
             <p className="text-lg text-foreground-light max-w-2xl mx-auto">
               AI 대화에서 시작해 영구적인 콘텐츠 자산으로
@@ -129,7 +128,7 @@ export default function PagesPage() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">유연성 (Flexibility)</h3>
               <p className="text-foreground-light">
-                직접 AI 대화를 캡처하거나, Bridge Notes에서 만든 글을
+                직접 AI 대화를 캡처하거나, BRIDGE Notes에서 만든 글을
                 불러와 확장할 수 있습니다.
               </p>
             </div>
@@ -156,13 +155,13 @@ export default function PagesPage() {
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">직접 캡처</h3>
               <p className="text-foreground-light mb-6">
-                Bridge Notes와 동일한 두 클릭 캡처 방식입니다.
+                BRIDGE Notes와 동일한 두 클릭 캡처 방식입니다.
                 AI 대화에서 시작 메시지 클릭 → 끝 메시지 클릭으로 바로 긴 글 확장 프로세스로 진행됩니다.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-foreground">
                   <span className="text-pages">✓</span>
-                  Same two-click UX as Bridge Notes
+                  Same two-click UX as BRIDGE Notes
                 </li>
                 <li className="flex items-center gap-3 text-foreground">
                   <span className="text-pages">✓</span>
@@ -179,9 +178,9 @@ export default function PagesPage() {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-notes/20 text-notes text-sm font-medium rounded-full mb-6">
                 Optional
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Bridge Notes 연동</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4">BRIDGE Notes 연동</h3>
               <p className="text-foreground-light mb-6">
-                Bridge Notes에서 만든 짧은 글을 불러와 확장할 수 있습니다.
+                BRIDGE Notes에서 만든 짧은 글을 불러와 확장할 수 있습니다.
                 SNS에서 검증된(반응 좋은) 글을 긴 글로 확장하세요.
               </p>
               <ul className="space-y-3">
@@ -222,7 +221,7 @@ export default function PagesPage() {
               </div>
               <h3 className="text-lg font-semibold text-foreground mb-2">두 클릭 캡처</h3>
               <p className="text-sm text-foreground-light">
-                Same intuitive capture as Bridge Notes
+                Same intuitive capture as BRIDGE Notes
               </p>
             </div>
             {/* Feature 2 */}
@@ -329,7 +328,7 @@ export default function PagesPage() {
               가격 정책
             </h2>
             <p className="text-lg text-foreground-light max-w-2xl mx-auto">
-              Same price as Bridge Notes, optimized for long-form content
+              Same price as BRIDGE Notes, optimized for long-form content
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -403,7 +402,7 @@ export default function PagesPage() {
             AI 대화를 검색되는 브랜드로
           </h2>
           <p className="text-xl text-white/80 mb-10">
-            Bridge Pages 출시 알림을 받고, 당신의 대화를 블로그 자산으로 만드세요.
+            BRIDGE Pages 출시 알림을 받고, 당신의 대화를 블로그 자산으로 만드세요.
             <br />
             얼리버드 혜택이 제공될 예정입니다.
           </p>
@@ -430,7 +429,7 @@ export default function PagesPage() {
             Pages를 기다리는 동안, SNS 브랜딩부터
           </h2>
           <p className="text-lg text-foreground-light mb-10">
-            Bridge Notes로 먼저 AI 대화를 SNS 콘텐츠로 바꿔보세요.
+            BRIDGE Notes로 먼저 AI 대화를 SNS 콘텐츠로 바꿔보세요.
             <br />
             오늘의 대화가 내일의 브랜드가 됩니다.
           </p>
@@ -438,7 +437,7 @@ export default function PagesPage() {
             href="/notes"
             className="inline-flex px-8 py-4 bg-notes text-white rounded-xl font-semibold text-lg hover:bg-notes-secondary transition-colors shadow-lg shadow-notes/25"
           >
-            Start branding with Bridge Notes →
+            Start branding with BRIDGE Notes →
           </Link>
         </div>
       </section>
@@ -448,17 +447,15 @@ export default function PagesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-bridge rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">B</span>
-              </div>
-              <span className="font-semibold text-xl">Bridge</span>
+              <Image src="/icons/bridge-icon.svg" alt="BRIDGE" width={32} height={32} className="rounded-lg" />
+              <span className="font-semibold text-xl">BRIDGE</span>
             </div>
             <div className="flex gap-8 text-sm">
               <Link href="/notes" className="hover:text-notes transition-colors">
-                Bridge Notes
+                BRIDGE Notes
               </Link>
               <Link href="/pages" className="hover:text-pages transition-colors">
-                Bridge Pages
+                BRIDGE Pages
               </Link>
               <Link href="/pricing" className="hover:text-bridge transition-colors">
                 가격
@@ -467,7 +464,7 @@ export default function PagesPage() {
                 문서
               </Link>
             </div>
-            <p className="text-sm opacity-70">© 2025 Bridge. From Chat to Brand.</p>
+            <p className="text-sm opacity-70">© 2025 BRIDGE. From Chat to Brand.</p>
           </div>
         </div>
       </footer>
