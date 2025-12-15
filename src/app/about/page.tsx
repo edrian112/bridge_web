@@ -229,13 +229,11 @@ export default function AboutPage() {
 
             {/* Future */}
             <div className="flex items-center gap-6 p-6 bg-background-alt rounded-2xl border border-border">
-              <div className="w-16 h-16 bg-bridge/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">🌐</span>
-              </div>
+              <Image src="/icons/BRIDGE-icon64.png" alt="BRIDGE" width={48} height={48} className="flex-shrink-0" />
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-foreground mb-1">Coming Soon...</h3>
                 <p className="text-foreground-light text-sm">
-                  Bridge Community, Bridge API, Bridge Teams
+                  다음 브릿지를 기대해주세요.
                 </p>
               </div>
               <span className="text-foreground-light text-sm">준비 중</span>
