@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Product = "notes" | "pages";
 type Plan = "free" | "basic" | "standard" | "max" | null;
@@ -97,7 +98,13 @@ export default function PricingContent() {
                 : "text-foreground-light hover:text-foreground hover:bg-background"
             }`}
           >
-            <span className="text-lg">⚡</span>
+            <Image
+              src="/icons/Notes_icon32.png"
+              alt="Notes"
+              width={20}
+              height={20}
+              className="object-contain"
+            />
             BRIDGE Notes
             <span
               className={`text-xs px-2 py-0.5 rounded-full ${
@@ -115,7 +122,13 @@ export default function PricingContent() {
                 : "text-foreground-light hover:text-foreground hover:bg-background"
             }`}
           >
-            <span className="text-lg">📝</span>
+            <Image
+              src="/icons/Pages_icon32.png"
+              alt="Pages"
+              width={20}
+              height={20}
+              className="object-contain"
+            />
             BRIDGE Pages
             <span
               className={`text-xs px-2 py-0.5 rounded-full ${

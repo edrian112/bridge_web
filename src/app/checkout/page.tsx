@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Suspense } from "react";
 import { Header, Footer } from "@/components";
 
@@ -88,8 +89,14 @@ function CheckoutContent() {
           {/* 선택된 플랜 정보 카드 */}
           <div className="bg-background rounded-2xl border-2 border-bridge p-8 mb-8">
             <div className="flex items-center gap-4 mb-6">
-              <div className={`w-14 h-14 ${product === "notes" ? "bg-notes" : "bg-pages"} rounded-xl flex items-center justify-center`}>
-                <span className="text-2xl">{product === "notes" ? "⚡" : "📝"}</span>
+              <div className="w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden">
+                <Image
+                  src={product === "notes" ? "/icons/Notes_icon64.png" : "/icons/Pages_icon64.png"}
+                  alt={product === "notes" ? "BRIDGE Notes" : "BRIDGE Pages"}
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <p className="text-sm text-foreground-light">{productName}</p>
