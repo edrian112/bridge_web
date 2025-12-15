@@ -146,7 +146,7 @@ npm start
 ## Contact
 
 - **Email**: edari.bridge@gmail.com
-- **GitHub**: [edrian112/bridge](https://github.com/edrian112/bridge)
+- **GitHub**: [edrian112/bridge_web](https://github.com/edrian112/bridge_web)
 - **Threads (BRIDGE)**: [@bridge.project.ai](https://www.threads.com/@bridge.project.ai)
 - **Threads (Developer)**: [@edari_bridge](https://www.threads.com/@edari_bridge)
 
