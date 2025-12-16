@@ -254,24 +254,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-bridge">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            오늘의 대화가 내일의 브랜드가 됩니다
-          </h2>
-          <p className="text-white/80 mb-8">
-            BRIDGE와 함께 당신의 AI 대화를 브랜드로 만들어보세요.
-          </p>
-          <Link
-            href="/notes"
-            className="inline-flex px-8 py-4 bg-white text-bridge rounded-xl font-semibold text-lg hover:bg-bridge-light transition-colors"
-          >
-            시작하기
-          </Link>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

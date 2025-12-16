@@ -106,32 +106,6 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            지금 무료로 시작하세요
-          </h2>
-          <p className="text-lg text-foreground-light mb-10">
-            매월 무료로 시작. 신용카드 필요 없음. 언제든 업그레이드 가능.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/download"
-              className="px-8 py-4 bg-bridge text-white rounded-xl font-semibold text-lg hover:bg-bridge-secondary transition-colors shadow-lg shadow-bridge/25"
-            >
-              무료로 다운로드
-            </Link>
-            <Link
-              href="/notes"
-              className="px-8 py-4 bg-background border-2 border-notes text-notes rounded-xl font-semibold text-lg hover:bg-notes-light transition-colors"
-            >
-              Notes 자세히 보기
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function PagesPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header ctaText="출시 알림" ctaHref="#waitlist" ctaColor="pages" />
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-pages-light">
@@ -311,26 +311,6 @@ export default function PagesPage() {
           <p className="mt-4 text-sm text-white/60">
             스팸 메일을 보내지 않습니다. 출시 알림만 보내드립니다.
           </p>
-        </div>
-      </section>
-
-      {/* Notes CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-notes-light">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Pages를 기다리는 동안, SNS 브랜딩부터
-          </h2>
-          <p className="text-lg text-foreground-light mb-10">
-            BRIDGE Notes로 먼저 AI 대화를 SNS 콘텐츠로 바꿔보세요.
-            <br />
-            오늘의 대화가 내일의 브랜드가 됩니다.
-          </p>
-          <Link
-            href="/notes"
-            className="inline-flex px-8 py-4 bg-notes text-white rounded-xl font-semibold text-lg hover:bg-notes-secondary transition-colors shadow-lg shadow-notes/25"
-          >
-            Start branding with BRIDGE Notes →
-          </Link>
         </div>
       </section>
 

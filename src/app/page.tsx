@@ -369,29 +369,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-bridge">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            당신의 AI 대화를 브랜드로 만들 준비가 되셨나요?
-          </h2>
-          <p className="text-xl text-white/80 mb-4">
-            매월 5회 무료. 지금 바로 시작하세요.
-          </p>
-          <p className="text-white/60 mb-10">
-            Claude, ChatGPT, Perplexity, Gemini 모두 지원
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/download"
-              className="px-8 py-4 bg-white text-bridge rounded-xl font-semibold text-lg hover:bg-bridge-light transition-colors shadow-lg"
-            >
-              무료로 다운로드
-            </Link>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );

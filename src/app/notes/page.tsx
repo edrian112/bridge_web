@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Header, Footer, SectionHeader, FeatureCard, PlatformCard, CTASection, Badge } from "@/components";
+import { Header, Footer, SectionHeader, FeatureCard, PlatformCard, Badge } from "@/components";
 
 export const metadata: Metadata = {
   title: "BRIDGE Notes - AI 대화를 SNS 콘텐츠로",
@@ -200,15 +200,6 @@ export default function NotesPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <CTASection
-        title="AI 대화를 브랜드로 만들 준비가 되셨나요?"
-        subtitle="매월 5회 무료. 오늘의 대화가 내일의 브랜드가 됩니다."
-        buttonText="설치 가이드 보기"
-        buttonHref="#install-guide"
-        color="notes"
-      />
 
       <Footer />
     </div>
